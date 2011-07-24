@@ -53,7 +53,7 @@ _NM_DIS_NAME="02_tlp-ifup"
 _LIB="/usr/lib/tlp-pm"
 
 src_configure() {
-	if use networmanager; then
+	if use networkmanager; then
 		gentoo/ifup_assistant.pl "nm" ./tlp-ifup > "${T}/${_NM_DIS_NAME}" || die "ifup_assistant.pl failed."
 	fi
 }
