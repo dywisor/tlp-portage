@@ -2,6 +2,11 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-0.3.3-r0 (23 Sep 2011)
+	23 Sep 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.3-r0.ebuild :
+
+	tlp-0.3.3
+
 *tlp-0.3.2-r3 (27 Jul 2011)
 
 	27 Jul 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.2-r3.ebuild :
