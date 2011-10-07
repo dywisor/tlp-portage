@@ -13,7 +13,7 @@
 		</maintainer>
 		<changelog>https://raw.github.com/linrunner/TLP/master/debian/changelog</changelog>
 		<doc lang="de">http://thinkpad-wiki.org/TLP_-_Stromspareinstellungen_fuer_Ubuntu</doc>
-		<doc lang="en">https://raw.github.com/linrunner/TLP/master/README</doc>
+		<doc lang="en">https://github.com/linrunner/TLP/wiki/TLP-Linux-Advanced-Power-Management</doc>
 	</upstream>
 	<longdescription>
 		TLP is a collection of scripts enabling laptop-mode and implementing power save features for laptop hardware.
