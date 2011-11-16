@@ -23,6 +23,7 @@
 		<flag name='thinkpad'>Use <pkg>app-laptop/tp_smapi</pkg> for setting/getting battery thresholds on Thinkpads.</flag>
 		<flag name='smartmontools'>Get SMART information from drives that support it.</flag>
 		<flag name='ethtool'>Use <pkg>sys-apps/ethtool</pkg> to control(=disable) Wake on LAN.</flag>
+		<flag name='lsb-release'>Include <pkg>sys-apps/lsb-release</pkg> for tlp-stat.</flag>
 		<flag name='laptop-mode-tools'>Allow parallel installation of <pkg>app-laptop/laptop-mode-tools</pkg>
 		and <pkg>app-laptop/tlp</pkg>. NOT RECOMMENDED</flag>
 		<flag name='X'>If unset, skip installation of X-specific files.</flag>

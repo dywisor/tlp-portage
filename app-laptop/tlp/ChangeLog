@@ -2,6 +2,20 @@
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-0.3.4-r1 (11 Nov 2011)
+	11 Nov 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.4-r0.ebuild, metadata.xml :
+
+	Using new tlp eclass, tarballs are bzipped now.
+
+	Added optional sys-apps/lsb-release dependency for tlp-stat.
+
+	fixed typo tlp-functions::check_lmt() introduced by gentoo patch
+
+*tlp-0.3.2-r? (16 Nov 2011)
+	11 Nov 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.2-r?.ebuild :
+
+	Removed all tlp-0.3.2 ebuilds.
+
 *tlp-0.3.4-r0 (06 Oct 2011)
 	06 Oct 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.4-r0.ebuild :
 
