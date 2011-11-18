@@ -114,13 +114,13 @@ tlp_compile() {
 # wrapper function tlp_install
 tlp_install() {
 	case "${PVR}" in
-		"0.3.4"*) tlp_install_034 || die;;
+		'0.3.'*) tlp_install_03 || die;;
 		*) die "tlp.eclass: unsupported version '${PVR}'" ;;
 	esac
 }
 
-# install tlp 0.3.4 series
-tlp_install_034() {
+# install tlp 0.3.x series
+tlp_install_03() {
 	dosbin tlp || die
 
 	newbashcomp "tlp.bash_completion" ${PN}
