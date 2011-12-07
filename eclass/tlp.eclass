@@ -64,7 +64,7 @@ tlp_preinst() {
    local hook
    for hook in $ETLP_CONFLICTING_PMHOOKS; do
    if [[ -x "/usr/lib/pm-utils/power.d/${hook}" ]];then
-      ln -sf /usr/lib/tlp-pm/tlp-nop /etc/pm/power.d/$i || die "Failed to disable ${hook}."
+      ln -sf /usr/lib/tlp-pm/tlp-nop /etc/pm/power.d/${hook} || die "Failed to disable ${hook}."
    fi
    done
    return 0
