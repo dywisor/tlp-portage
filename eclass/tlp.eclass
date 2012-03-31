@@ -2,6 +2,10 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+# @DEPRECATED
+# this eclass is deprecated ("bad code" - sets KEYWORDS, overrides IUSE, ...)
+# - do not use it in future ebuilds.
+
 inherit eutils bash-completion-r1
 
 # std vars

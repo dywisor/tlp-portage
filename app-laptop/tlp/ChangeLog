@@ -1,6 +1,21 @@
 # ChangeLog for app-laptop/tlp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*tlp-0.3.6 (30 Mar 2012)
+	31 Mar 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.6-r0.ebuild, metadata.xml :
+
+	TLP 0.3.6: acpi-hook USE-flag removed, rdw (Radio Device Wizard) USE-flag added
+
+*old ebuilds removed (30 Mar 2012)
+	31 Mar 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.3-r0.ebuild, tlp-0.3.3-r1.ebuild, tlp-0.3.4-r0.ebuild :
+
+	old ebuilds removed
+
+*repoman "IUSE.undefined" (30 Mar 2012)
+	31 Mar 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.3-r2.ebuild, tlp-0.3.4-r1.ebuild :
+
+	added IUSE="", won't use the old eclass 'tlp' in future
 
 *tlp-0.3.3-r2 (18 Nov 2011)
 	18 Nov 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.3-r2.ebuild :
