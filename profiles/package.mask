@@ -1,4 +1,0 @@
-# against the FHS
-=app-laptop/tlp-0.3.2-r2
-# broken net-action
-=app-laptop/tlp-0.3.2-r0
