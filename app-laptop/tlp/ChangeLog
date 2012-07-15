@@ -2,6 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*old ebuilds removed (15 Jul 2012)
+	15 Jul 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.3-r2.ebuild, tlp-0.3.4-r1.ebuild :
+
+	old ebuilds removed
+
 *tlp-0.3.6-r1 (31 Mar 2012)
 	31 Mar 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.6-r0.ebuild, tlp-0.3.6-1.ebuild :
 
