@@ -28,9 +28,6 @@
 		and <pkg>app-laptop/tlp</pkg>. NOT RECOMMENDED</flag>
 		<flag name='X'>If unset, skip installation of X-specific files.</flag>
 		<flag name='rdw'>Radio device wizard: switch radios upon network connect/disconnect and dock/undock</flag>
-		<flag name='acpi-hook'>Install an acpid event handler running tlp on power state change, thus eliminating
-		the dependency on upower/dbus. Only the upower method is supported by upstream.</flag>
 		<flag name='bash-completion'>TLP has bash-completion.</flag>
-		<flag name='networkmanager'>Install a NetworkManager dispatcher.</flag>
 	</use>
 </pkgmetadata>
