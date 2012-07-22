@@ -2,6 +2,13 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-0.3.6.900 (22 Jul 2012)
+	22 Jul 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.6.900.ebuild :
+
+	added tlp devel version 0.3.6.900 that adds support
+	for newer Thinkpads (Sandy/Ivy Bridge),
+	masked for testing
+
 *old ebuilds removed (15 Jul 2012)
 	15 Jul 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.3-r2.ebuild, tlp-0.3.4-r1.ebuild :
 
