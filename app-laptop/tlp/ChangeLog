@@ -2,6 +2,12 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-0.3.7_p1 (21 Aug 2012)
+	21 Aug 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7_p1, metadata.xml :
+
+	TLP 0.3.7 with fix for bug #39 from the devel branch
+	metadata updated: doc homepage and use flags
+
 *tlp-0.3.6.900 (22 Jul 2012)
 	22 Jul 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.6.900.ebuild :
 

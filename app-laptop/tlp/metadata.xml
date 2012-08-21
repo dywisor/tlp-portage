@@ -12,15 +12,18 @@
 			<name>Thomas Koch</name>
 		</maintainer>
 		<changelog>https://raw.github.com/linrunner/TLP/master/debian/changelog</changelog>
-		<doc lang="de">http://thinkpad-wiki.org/TLP_-_Stromspareinstellungen_fuer_Ubuntu</doc>
-		<doc lang="en">https://github.com/linrunner/TLP/wiki/TLP-Linux-Advanced-Power-Management</doc>
+		<doc lang="de">http://thinkwiki.de/TLP_-_Linux_Stromsparen</doc>
+		<doc lang="en">http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html</doc>
 	</upstream>
 	<longdescription>
 		TLP is a collection of scripts enabling laptop-mode and implementing power save features for laptop hardware.
 		See the upstream docs and https://github.com/dywisor/tlp-gentoo.
 	</longdescription>
 	<use lang="en">
-		<flag name='thinkpad'>Use <pkg>app-laptop/tp_smapi</pkg> for setting/getting battery thresholds on Thinkpads.</flag>
+		<flag name='thinkpad'>Enable Thinkpad-specific dependencies for setting/getting battery thresholds etc.</flag>
+		<flag name='tpacpi'>Enable battery control via tpacpi-bat/acpi_call (Sandy Bridge and newer, e.g. X220,T430)</flag>
+		<flag name='tp_smapi'>Enable battery control via tp-smapi (older Thinkpad models up to Sandy Bridge Gen 1 (not Ivy Bridge and later))</flag>
+		<flag name='busybox'>Use busybox where possible, e.g. for hdparm</flag>
 		<flag name='smartmontools'>Get SMART information from drives that support it.</flag>
 		<flag name='ethtool'>Use <pkg>sys-apps/ethtool</pkg> to control(=disable) Wake on LAN.</flag>
 		<flag name='lsb-release'>Include <pkg>sys-apps/lsb-release</pkg> for tlp-stat.</flag>

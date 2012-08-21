@@ -1,0 +1,9 @@
+# ChangeLog for app-laptop/tlp
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*tpacpi-bat-2011 (21 Aug 2012)
+	21 Aug 2012; Andre Erdmann <dywi@mailerd.de> tpacpi-bat-2011.ebuild, metadata.xml :
+
+	Initial Import
+	tpacpi-bat is an alternative to tp_smapi which is broken on newer Thinkpads (Sandy Bridge)
