@@ -4,6 +4,8 @@
 
 EAPI=4
 
+inherit eutils bash-completion-r1
+
 DESCRIPTION="Power-Management made easy, designed for Thinkpads."
 HOMEPAGE="http://linrunner.de/en/tlp/tlp.html"
 SRC_URI="https://github.com/downloads/dywisor/tlp-gentoo/${P}-${PR}-gentoo.tar.bz2"
@@ -12,8 +14,6 @@ RESTRICT="mirror"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-
-inherit eutils bash-completion-r1
 
 IUSE="
 	X

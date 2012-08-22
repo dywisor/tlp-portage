@@ -4,6 +4,8 @@
 
 EAPI=4
 
+inherit eutils
+
 _GITREF="43ac26a8a3bb3d3d472555c4cb2845bd76f0a188"
 
 DESCRIPTION="Exposes battery control through ACPI as an alternative to app-laptop/tp_smapi"
@@ -14,8 +16,6 @@ RESTRICT="mirror"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-
-inherit eutils
 
 IUSE="+acpi_call"
 DEPEND="${DEPEND:-}"
