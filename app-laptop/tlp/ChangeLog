@@ -2,6 +2,26 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-0.3.7.901 (12 Jan 2013)
+	12 Jan 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.901_pre20130103.ebuild :
+
+	added tlp devel version 0.3.7.901 (as of Jan 03 2013),
+	masked for testing
+
+*tlp-0.3.7.1 (12 Jan 2013)
+	12 Jan 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.1.ebuild, metadata.xml :
+
+	added TLP 0.3.7.1, same as tlp-0.3.7_p1 with the following differences:
+	* reports itself as 0.3.7.1
+	* new USE flags, optional dependencies are represented by one flag now
+	  instead of per-dependency flags
+	* includes the tlp-usblist output + tlp-stat needs_root_priv patches
+	* build system changed: using upstream git repo + gentoo-additions tarball
+	* depends on virtual/udev instead of sys-fs/udev,
+	  reported by antoligy (github issue #1)
+
+	metadata updated: use flags
+
 *tlp-0.3.7_p1 (21 Aug 2012)
 	21 Aug 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7_p1, metadata.xml :
 

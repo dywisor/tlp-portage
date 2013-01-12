@@ -1,0 +1,72 @@
+From 6fe086329f30c0d4c79fa5af7d9d69d99ce5db3a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Andr=C3=A9=20Erdmann?= <dywi@mailerd.de>
+Date: Thu, 10 Jan 2013 14:51:09 +0100
+Subject: [PATCH] tlp-stat: do not set needs_root_priv=0 directly
+
+in read_args(): do not set needs_root_priv=0 if it has already been set.
+This fixes execution of tlp-stat with the --battery arg followed by any
+other arg that sets needs_root_priv to 0.
+---
+ tlp-stat | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+
+diff --git a/tlp-stat b/tlp-stat
+index f00489a..3fac293 100755
+--- a/tlp-stat
++++ b/tlp-stat
+@@ -28,7 +28,7 @@ readonly DEBUGLOG=/var/log/debug
+ # --- Variables
+ nodebug=1
+ 
+-needs_root_priv=1
++needs_root_priv=
+ show_all=1
+ show_bat=0
+ show_conf=0
+@@ -100,30 +100,31 @@ read_args () {
+             "-b"|"--battery")
+                 show_all=0
+                 show_bat=1
++                needs_root_priv=1
+                 ;;
+                 
+             "-c"|"--config")
+                 show_all=0
+                 show_conf=1
+-                needs_root_priv=0
++                : ${needs_root_priv:=0}
+                 ;;
+ 
+             "-r"|"--rfkill")
+                 show_all=0
+                 show_rfkill=1
+-                needs_root_priv=0
++                : ${needs_root_priv:=0}
+                 ;;
+ 
+             "-t"|"--temp")
+                 show_all=0
+                 show_temp=1
+-                needs_root_priv=0
++                : ${needs_root_priv:=0}
+                 ;;
+                 
+             "-T"|"--trace")
+                 show_all=0
+                 show_trace=1
+-                needs_root_priv=0
++                : ${needs_root_priv:=0}
+                 ;;
+ 
+             *)
+@@ -151,6 +152,7 @@ done
+ 
+ # --- MAIN
+ read_args $*
++: ${needs_root_priv:=1}
+ 
+ if [ "$needs_root_priv" = "1" ]; then
+     check_root
+-- 
+1.8.1
+
