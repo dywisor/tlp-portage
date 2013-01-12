@@ -2,6 +2,11 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tpacpi-bat-2011-r1 (07 Jan 2013)
+	07 Jan 2013; Andre Erdmann <dywi@mailerd.de> tpacpi-bat-2011-r1.ebuild :
+
+	Fix SRC_URI by using the correct git commit.
+
 *tpacpi-bat-2011 (21 Aug 2012)
 	21 Aug 2012; Andre Erdmann <dywi@mailerd.de> tpacpi-bat-2011.ebuild, metadata.xml :
 

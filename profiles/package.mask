@@ -2,3 +2,10 @@
 # Masked devel version for testing
 # Removal in 14 days as tlp 0.3.7 has been released
 =app-laptop/tlp-0.3.6.900
+
+# André Erdmann <dywi@mailerd.de> (07 Jan 2013)
+# Masked for version incorrectness
+# Additionally, tpacpi-bat is also available in the
+# official portage tree.
+# Removal in 14 days
+=app-laptop/tpacpi-bat-2011
