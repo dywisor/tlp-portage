@@ -2,6 +2,21 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-0.3.7.901_pre20130120 (20 Jan 2013)
+	20 Jan 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.901_pre20130120.ebuild :
+
+	added tlp devel version 0.3.7.901 (as of Jan 20 2013),
+	masked for testing
+
+	Notable changes:
+	* patches listed in tlp-0.3.7.1 (see below) have been applied upstream
+	* Enable/Disable dynamic overclocking ("Turbo Boost")
+	* option RUNTIME_PM_ALL that enables runtime pm
+	  for _all_ PCI(e) devices (EXPERIMENTAL)
+	* discharge_battery() catches SIGINT now
+	* power hook en-/disabling work properly now, without risking
+	  file collision with user-created files
+
 *tlp-0.3.7.901 (12 Jan 2013)
 	12 Jan 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.901_pre20130103.ebuild :
 
