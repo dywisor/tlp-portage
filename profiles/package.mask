@@ -1,8 +1,3 @@
-# André Erdmann <dywi@mailerd.de> (22 Aug 2012)
-# Masked devel version for testing
-# Removal in 14 days as tlp 0.3.7 has been released
-=app-laptop/tlp-0.3.6.900
-
 # André Erdmann <dywi@mailerd.de> (07 Jan 2013)
 # Mask devel version(s) for testing
 =app-laptop/tlp-0.3.7.9*
