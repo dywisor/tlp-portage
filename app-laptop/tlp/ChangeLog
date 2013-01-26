@@ -2,8 +2,19 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-0.3.7.901_pre20130126 (26 Jan 2013)
+	26 Jan 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.901_pre20130126.ebuild :
+
+	added tlp devel version 0.3.7.901 (as of Jan 26 2013)
+
+	Notable changes:
+	* (selectively) disable radio devices when the hardware switch is turned on
+	* tlp-pcilist
+	* use iw instead of iwconfig (if available)
+	* Bugfixes/Workarounds for the cpu boost feature
+
 *old ebuilds removed (25 Jan 2013)
-	25 Jan 2013; Andre Erdamnn <dywi@mailerd.de> tlp-0.3.6.900.ebuild :
+	25 Jan 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.6.900.ebuild :
 
 	old ebuild removed as announced in package.mask
 
