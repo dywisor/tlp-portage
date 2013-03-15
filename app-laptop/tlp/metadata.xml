@@ -29,17 +29,5 @@
 		<flag name='laptop-mode-tools'>Allow parallel installation of <pkg>app-laptop/laptop-mode-tools</pkg>
 		and <pkg>app-laptop/tlp</pkg>. NOT RECOMMENDED</flag>
 		<flag name='tpacpi-bundled'>Use the bundled tpacpi-bat script instead of <pkg>app-laptop/tpacpi-bat</pkg>.</flag>
-
-		<!-- these flags are deprecated as of tlp-0.3.7.901 (non-devel version 0.3.8 and later) -->
-		<flag name='thinkpad'>Enable Thinkpad-specific dependencies for setting/getting battery thresholds etc.</flag>
-		<flag name='tpacpi'>Enable battery control via tpacpi-bat/acpi_call (Sandy Bridge and newer, e.g. X220,T430)</flag>
-		<flag name='tp_smapi'>Enable battery control via tp-smapi (older Thinkpad models up to Sandy Bridge Gen 1 (not Ivy Bridge and later))</flag>
-		<flag name='busybox'>Use busybox where possible, e.g. for hdparm</flag>
-		<flag name='smartmontools'>Get SMART information from drives that support it.</flag>
-		<flag name='ethtool'>Use <pkg>sys-apps/ethtool</pkg> to control(=disable) Wake on LAN.</flag>
-		<flag name='lsb-release'>Include <pkg>sys-apps/lsb-release</pkg> for tlp-stat.</flag>
-		<flag name='X'>If unset, skip installation of X-specific files.</flag>
-		<flag name='tpacpi'>Install tpacpi for Sandy Bridge based Thinkpads</flag>
-		<flag name='usb'>Install tlp-usblist (depends on <pkg>dev-lang/perl</pkg>)</flag>
 	</use>
 </pkgmetadata>
