@@ -1,6 +1,14 @@
 # ChangeLog for app-laptop/tlp
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*tlp-0.3.8.1 (30 Mar 2013)
+
+	30 Mar 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.8.1.ebuild :
+	
+	Added upstream release 0.3.8.1 containing bug fixes, stability patches
+	as well as new features. See the previous entries in this file (since
+	0.3.7.1) and/or the upstream's changelog.
 
 *tlp-0.3.7.903_pre20130315 (15 Mar 2013)
 	15 Mar 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.903_pre20130315.ebuild :
