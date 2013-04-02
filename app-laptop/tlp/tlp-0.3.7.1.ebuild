@@ -86,6 +86,7 @@ PLIB=/usr/lib/pm-utils
 PMETC=/etc/pm
 
 src_prepare() {
+	git checkout 0.3.7.1
 	PATCHES+=(
 		"${FILESDIR}/tlp-usblist-print-unknown-if-device-desc-is-empty.patch"
 		"${FILESDIR}/tlp-stat-do-not-set-needs_root_priv-0-directly.patch"
