@@ -7,6 +7,7 @@ EAPI=4
 inherit base eutils bash-completion-r1 git-2
 
 EGIT_REPO_URI='git://github.com/linrunner/TLP.git'
+EGIT_COMMIT="${PV}"
 
 _ADDITIONS_STABLE_PVR="0.3.7.901"
 
@@ -86,7 +87,6 @@ PLIB=/usr/lib/pm-utils
 PMETC=/etc/pm
 
 src_prepare() {
-	git checkout 0.3.7.1
 	PATCHES+=(
 		"${FILESDIR}/tlp-usblist-print-unknown-if-device-desc-is-empty.patch"
 		"${FILESDIR}/tlp-stat-do-not-set-needs_root_priv-0-directly.patch"

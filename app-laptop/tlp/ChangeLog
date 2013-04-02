@@ -2,6 +2,17 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-0.3.7.1 (02 Apr 2013)
+
+	02 Apr 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.1.ebuild :
+
+	Fix building of tlp 0.3.7.1 which previously failed during src_prepare()
+	because EGIT_COMMIT was not set properly. Instead, the ebuild always
+	used upstream's master branch, which does no longer work since 0.3.8.1 has
+	has been released.
+
+	Reported by Burak Aktas (codwow; github issue #2).
+
 *tlp-0.3.8.1 (30 Mar 2013)
 
 	30 Mar 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.8.1.ebuild :
