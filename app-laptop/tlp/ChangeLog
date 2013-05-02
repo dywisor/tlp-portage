@@ -2,187 +2,166 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-*tlp-0.3.7.1 (02 Apr 2013)
+*tlp-0.3.9 (02 May 2013)
 
-	02 Apr 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.1.ebuild :
+  02 May 2013; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.9.ebuild:
+  Bugfix release, see upstream's changelog for details
 
-	Fix building of tlp 0.3.7.1 which previously failed during src_prepare()
-	because EGIT_COMMIT was not set properly. Instead, the ebuild always
-	used upstream's master branch, which does no longer work since 0.3.8.1 has
-	has been released.
-
-	Reported by Burak Aktas (codwow; github issue #2).
+  02 Apr 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.1.ebuild:
+  Fix building of tlp 0.3.7.1 which previously failed during src_prepare()
+  because EGIT_COMMIT was not set properly. Instead, the ebuild always
+  used upstream's master branch, which does no longer work since 0.3.8.1 has
+  has been released.
+  Reported by Burak Aktas (codwow; github issue #2).
 
 *tlp-0.3.8.1 (30 Mar 2013)
 
-	30 Mar 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.8.1.ebuild :
-	
-	Added upstream release 0.3.8.1 containing bug fixes, stability patches
-	as well as new features. See the previous entries in this file (since
-	0.3.7.1) and/or the upstream's changelog.
+  30 Mar 2013; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.8.1.ebuild:
+  Added upstream release 0.3.8.1 containing bug fixes, stability patches
+  as well as new features. See the previous entries in this file (since
+  0.3.7.1) and/or the upstream's changelog.
 
 *tlp-0.3.7.903_pre20130315 (15 Mar 2013)
-	15 Mar 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.903_pre20130315.ebuild :
 
-	added tlp devel version 0.3.7.903 (a.k.a. 0.3.8 beta 1)
+  15 Mar 2013; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.7.903_pre20130315.ebuild:
+  added tlp devel version 0.3.7.903 (a.k.a. 0.3.8 beta 1)
 
 *tlp-0.3.7.901_pre20130126-r1 (26 Jan 2013)
-	26 Jan 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.901_pre20130126-r1.ebuild :
 
-	same as tlp-0.3.7.901_pre20130126 with the following differences:
-	* added dependency on sys-power/acpid
-	* depend on any-of net-wireless/iw net-wireless/wireless-tools (in that order)
-	* added note during pkg_postinst() that acpid has to be restarted
+  26 Jan 2013; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.7.901_pre20130126-r1.ebuild:
+  same as tlp-0.3.7.901_pre20130126 with the following differences:
+  - added dependency on sys-power/acpid
+  - depend on any-of net-wireless/iw net-wireless/wireless-tools (in that order)
+  - added note during pkg_postinst() that acpid has to be restarted
 
 *tlp-0.3.7.901_pre20130126 (26 Jan 2013)
-	26 Jan 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.901_pre20130126.ebuild :
 
-	added tlp devel version 0.3.7.901 (as of Jan 26 2013)
+  26 Jan 2013; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.7.901_pre20130126.ebuild:
+  added tlp devel version 0.3.7.901 (as of Jan 26 2013)
+  Notable changes:
+  - (selectively) disable radio devices when the hardware switch is turned on
+  - tlp-pcilist
+  - use iw instead of iwconfig (if available)
+  - Bugfixes/Workarounds for the cpu boost feature
 
-	Notable changes:
-	* (selectively) disable radio devices when the hardware switch is turned on
-	* tlp-pcilist
-	* use iw instead of iwconfig (if available)
-	* Bugfixes/Workarounds for the cpu boost feature
-
-*old ebuilds removed (25 Jan 2013)
-	25 Jan 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.6.900.ebuild :
-
-	old ebuild removed as announced in package.mask
+  25 Jan 2013; Andre Erdmann <dywi@mailerd.de> -tlp-0.3.6.900.ebuild:
+  old ebuild removed as announced in package.mask
 
 *tlp-0.3.7.901_pre20130120 (20 Jan 2013)
-	20 Jan 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.901_pre20130120.ebuild :
 
-	added tlp devel version 0.3.7.901 (as of Jan 20 2013),
-	masked for testing
-
-	Notable changes:
-	* patches listed in tlp-0.3.7.1 (see below) have been applied upstream
-	* Enable/Disable dynamic overclocking ("Turbo Boost")
-	* option RUNTIME_PM_ALL that enables runtime pm
-	  for _all_ PCI(e) devices (EXPERIMENTAL)
-	* discharge_battery() catches SIGINT now
-	* power hook en-/disabling work properly now, without risking
-	  file collision with user-created files
+  20 Jan 2013; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.7.901_pre20130120.ebuild:
+  added tlp devel version 0.3.7.901 (as of Jan 20 2013), masked for testing
+  Notable changes:
+  - patches listed in tlp-0.3.7.1 (see below) have been applied upstream
+  - Enable/Disable dynamic overclocking ("Turbo Boost")
+  - option RUNTIME_PM_ALL that enables runtime pm
+    for _all_ PCI(e) devices (EXPERIMENTAL)
+  - discharge_battery() catches SIGINT now
+  - power hook en-/disabling work properly now, without risking
+    file collision with user-created files
 
 *tlp-0.3.7.901 (12 Jan 2013)
-	12 Jan 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.901_pre20130103.ebuild :
 
-	added tlp devel version 0.3.7.901 (as of Jan 03 2013),
-	masked for testing
+  12 Jan 2013; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.7.901_pre20130103.ebuild:
+  added tlp devel version 0.3.7.901 (as of Jan 03 2013), masked for testing
 
 *tlp-0.3.7.1 (12 Jan 2013)
-	12 Jan 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7.1.ebuild, metadata.xml :
 
-	added TLP 0.3.7.1, same as tlp-0.3.7_p1 with the following differences:
-	* reports itself as 0.3.7.1
-	* new USE flags, optional dependencies are represented by one flag now
-	  instead of per-dependency flags
-	* includes the tlp-usblist output + tlp-stat needs_root_priv patches
-	* build system changed: using upstream git repo + gentoo-additions tarball
-	* depends on virtual/udev instead of sys-fs/udev,
-	  reported by antoligy (github issue #1)
-
-	metadata updated: use flags
+  12 Jan 2013; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.7.1.ebuild, metadata.xml:
+  added TLP 0.3.7.1, same as tlp-0.3.7_p1 with the following differences:
+  - reports itself as 0.3.7.1
+  - new USE flags, optional dependencies are represented by one flag now
+    instead of per-dependency flags
+  - includes the tlp-usblist output + tlp-stat needs_root_priv patches
+  - build system changed: using upstream git repo + gentoo-additions tarball
+  - depends on virtual/udev instead of sys-fs/udev,
+    reported by antoligy (github issue #1)
+  metadata updated: use flags
 
 *tlp-0.3.7_p1 (21 Aug 2012)
-	21 Aug 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.7_p1, metadata.xml :
 
-	TLP 0.3.7 with fix for bug #39 from the devel branch
-	metadata updated: doc homepage and use flags
+  21 Aug 2012; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.7_p1.ebuild, metadata.xml:
+  TLP 0.3.7 with fix for bug #39 from the devel branch
+  metadata updated: doc homepage and use flags
 
 *tlp-0.3.6.900 (22 Jul 2012)
-	22 Jul 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.6.900.ebuild :
 
-	added tlp devel version 0.3.6.900 that adds support
-	for newer Thinkpads (Sandy/Ivy Bridge),
-	masked for testing
+  22 Jul 2012; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.6.900.ebuild:
+  added tlp devel version 0.3.6.900 that adds support
+  for newer Thinkpads (Sandy/Ivy Bridge), masked for testing
 
-*old ebuilds removed (15 Jul 2012)
-	15 Jul 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.3-r2.ebuild, tlp-0.3.4-r1.ebuild :
-
-	old ebuilds removed
+  15 Jul 2012; Andre Erdmann <dywi@mailerd.de> -tlp-0.3.3-r2.ebuild, -tlp-0.3.4-r1.ebuild:
+  old ebuilds removed
 
 *tlp-0.3.6-r1 (31 Mar 2012)
-	31 Mar 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.6-r0.ebuild, tlp-0.3.6-1.ebuild :
 
-	TLP 0.3.6-r1: fix init script, remove 0.3.6-r0
+  31 Mar 2012; Andre Erdmann <dywi@mailerd.de> -tlp-0.3.6-r0.ebuild, +tlp-0.3.6-r1.ebuild:
+  TLP 0.3.6-r1: fix init script, remove 0.3.6-r0
 
 *tlp-0.3.6 (30 Mar 2012)
-	31 Mar 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.6-r0.ebuild, metadata.xml :
 
-	TLP 0.3.6: acpi-hook USE-flag removed, rdw (Radio Device Wizard) USE-flag added
+  31 Mar 2012; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.6-r0.ebuild, metadata.xml:
+  TLP 0.3.6: acpi-hook USE-flag removed, rdw (Radio Device Wizard) USE-flag added
 
-*old ebuilds removed (30 Mar 2012)
-	31 Mar 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.3-r0.ebuild, tlp-0.3.3-r1.ebuild, tlp-0.3.4-r0.ebuild :
+  31 Mar 2012; Andre Erdmann <dywi@mailerd.de> -tlp-0.3.3-r0.ebuild,
+  -tlp-0.3.3-r1.ebuild, -tlp-0.3.4-r0.ebuild:
+  old ebuilds removed
 
-	old ebuilds removed
-
-*repoman "IUSE.undefined" (30 Mar 2012)
-	31 Mar 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.3-r2.ebuild, tlp-0.3.4-r1.ebuild :
-
-	added IUSE="", won't use the old eclass 'tlp' in future
+  31 Mar 2012; Andre Erdmann <dywi@mailerd.de> tlp-0.3.3-r2.ebuild, tlp-0.3.4-r1.ebuild:
+  added IUSE="", won't use the old eclass 'tlp' in future
 
 *tlp-0.3.3-r2 (18 Nov 2011)
-	18 Nov 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.3-r2.ebuild :
 
-	0.3.4 fixes (lsb-release, tlp-stat) for the 0.3.3 series.
+  18 Nov 2011; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.3-r2.ebuild:
+  0.3.4 fixes (lsb-release, tlp-stat) for the 0.3.3 series.
 
 *tlp-0.3.4-r1 (16 Nov 2011)
-	16 Nov 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.4-r0.ebuild, metadata.xml :
 
-	Using new tlp eclass, tarballs are bzipped now.
+  16 Nov 2011; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.4-r0.ebuild, metadata.xml:
+  Using new tlp eclass, tarballs are bzipped now.
+  Added optional sys-apps/lsb-release dependency for tlp-stat.
+  fixed typo tlp-functions::check_lmt() introduced by gentoo patch
 
-	Added optional sys-apps/lsb-release dependency for tlp-stat.
-
-	fixed typo tlp-functions::check_lmt() introduced by gentoo patch
-
-*tlp-0.3.2-r? (16 Nov 2011)
-	11 Nov 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.2-r?.ebuild :
-
-	Removed all tlp-0.3.2 ebuilds.
+  11 Nov 2011; Andre Erdmann <dywi@mailerd.de> -tlp-0.3.2-r?.ebuild:
+  Removed all tlp-0.3.2 ebuilds.
 
 *tlp-0.3.4-r0 (06 Oct 2011)
-	06 Oct 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.4-r0.ebuild :
 
-	tlp-0.3.4
+  06 Oct 2011; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.4-r0.ebuild:
+  tlp-0.3.4
 
 *tlp-0.3.3-r1 (23 Sep 2011)
-	23 Sep 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.3-r1.ebuild :
 
-	use standard/upstream zztlp script
+  23 Sep 2011; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.3-r1.ebuild:
+  use standard/upstream zztlp script
 
 *tlp-0.3.3-r0 (23 Sep 2011)
-	23 Sep 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.3-r0.ebuild :
 
-	tlp-0.3.3
+  23 Sep 2011; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.3-r0.ebuild:
+  tlp-0.3.3
 
 *tlp-0.3.2-r3 (27 Jul 2011)
 
-	27 Jul 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.2-r3.ebuild :
-
-	Install tlp-ifup into /usr/share/tlp-pm as it is a read-only,
-	not executable text file.
+  27 Jul 2011; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.2-r3.ebuild:
+  Install tlp-ifup into /usr/share/tlp-pm as it is a read-only,
+  not executable text file.
 
 
 *tlp-0.3.2-r2 (24 Jul 2011)
 
-	24 Jul 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.2-r2.ebuild :
-
-	0.3.2-r2 uses the reimplementation of net-action in the eselect script.
+  24 Jul 2011; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.2-r2.ebuild:
+  0.3.2-r2 uses the reimplementation of net-action in the eselect script.
 
 
 *tlp-0.3.2-r1 (23 Jul 2011)
 
-	23 Jul 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.2-r1.ebuild :
-
-	0.3.2-r1 removes the broken net-action in the eselect script.
+  23 Jul 2011; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.2-r1.ebuild:
+  0.3.2-r1 removes the broken net-action in the eselect script.
 
 
 *tlp-0.3.2-r0 (22 Jul 2011)
 
-	22 Jul 2011; Andre Erdmann <dywi@mailerd.de> tlp-0.3.2-r0.ebuild, metadata.xml :
-
-	Initial import.
-	TLP is a collection of scripts enabling laptop-mode and
-	implementing power save features for laptop hardware.
+  22 Jul 2011; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.2-r0.ebuild, +metadata.xml:
+  Initial import.
+  TLP is a collection of scripts enabling laptop-mode and
+  implementing power save features for laptop hardware.
