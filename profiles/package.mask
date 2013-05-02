@@ -1,3 +1,9 @@
-# André Erdmann <dywi@mailerd.de> (07 Jan 2013)
-# Mask devel version(s) for testing
-=app-laptop/tlp-0.3.7.9*
+# André Erdmann <dywi@mailerd.de> (02 May 2013)
+# Mask devel version(s) for removal in 14 days
+=app-laptop/tlp-0.3.7.90*
+
+# André Erdmann <dywi@mailerd.de> (02 May 2013)
+# Mask tpacpi-bat-2011-r1 for removal in 14 days
+#  It's available in Gentoo's portage tree
+#  and in TLP via USE="tpacpi-bundled"
+=app-laptop/tpacpi-bat-2011-r1
