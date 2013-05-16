@@ -1,3 +1,0 @@
-# André Erdmann <dywi@mailerd.de> (02 May 2013)
-# Mask devel version(s) for removal in 14 days
-=app-laptop/tlp-0.3.7.90*
