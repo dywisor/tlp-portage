@@ -20,7 +20,8 @@ LICENSE="GPL-2 tpacpi-bundled? ( GPL-3 )"
 
 SLOT="0"
 
-KEYWORDS="~x86 ~amd64"
+#KEYWORDS="~x86 ~amd64"
+KEYWORDS=""
 
 IUSE="tlp_suggests rdw +openrc systemd bash-completion laptop-mode-tools tpacpi-bundled"
 REQUIRED_USE="|| ( openrc systemd )"
