@@ -2,6 +2,15 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-0.3.9.900_pre20130730 (30 Jul 2013)
+
+  30 Jul 2013; Andre Erdmann <dywi@mailerd.de> +tlp-0.3.9.900_pre20130730.ebuild:
+  Added TLP devel version, notable changes:
+  * deal with udev's network device naming scheme
+    (+support more than one eth device)
+  * support for intel_pstate for controlling turbo mode
+  * misc fixes/enhancements (see upstream log)
+
   16 May 2013; Andre Erdmann <dywi@mailerd.de>
   -tlp-0.3.7.901_pre20130126-r1.ebuild,
   -tlp-0.3.7.903_pre20130315.ebuild:
