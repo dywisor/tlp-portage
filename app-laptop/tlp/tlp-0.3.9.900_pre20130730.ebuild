@@ -39,7 +39,7 @@ DEPEND=""
 RDEPEND="${DEPEND:-}
 	sys-apps/hdparm
 
-	sys-power/upower
+	sys-power/upower[-systemd(-),deprecated(+)]
 	sys-power/pm-utils
 	sys-power/acpid
 	virtual/udev

@@ -58,7 +58,7 @@ RDEPEND="${DEPEND:-}
 	sys-apps/hdparm
 	sys-apps/dmidecode
 
-	sys-power/upower
+	sys-power/upower[-systemd(-),deprecated(+)]
 	sys-power/pm-utils
 	virtual/udev
 
