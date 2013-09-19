@@ -30,7 +30,7 @@ esac
 SRC_URI="http://dreliam.de/tlp/gentoo/tlp-gentoo-additions-${_ADDITIONS_PVR}.tar.bz2"
 RESTRICT="mirror"
 
-IUSE="tlp_suggests rdw +perl +openrc systemd bash-completion laptop-mode-tools tpacpi-bundled"
+IUSE="tlp_suggests rdw +perl +openrc systemd bash-completion laptop-mode-tools +tpacpi-bundled"
 REQUIRED_USE="
 	tlp_suggests?   ( perl )
 	tpacpi-bundled? ( perl )
@@ -44,7 +44,7 @@ LICENSE="GPL-2 tpacpi-bundled? ( GPL-3 )"
 SLOT="0"
 KEYWORDS="${_MY_KEYWORDS}"
 
-_PKG_TPACPI='app-laptop/tpacpi-bat'
+_PKG_TPACPI='>app-laptop/tpacpi-bat-1.0'
 _PKG_TPSMAPI='app-laptop/tp_smapi'
 _PKG_ACPICALL='sys-power/acpi_call'
 _OPTIONAL_DEPEND='

@@ -23,10 +23,10 @@ SLOT="0"
 #KEYWORDS="~x86 ~amd64"
 KEYWORDS=""
 
-IUSE="tlp_suggests rdw +openrc systemd bash-completion laptop-mode-tools tpacpi-bundled"
+IUSE="tlp_suggests rdw +openrc systemd bash-completion laptop-mode-tools +tpacpi-bundled"
 REQUIRED_USE="|| ( openrc systemd )"
 
-_PKG_TPACPI='app-laptop/tpacpi-bat'
+_PKG_TPACPI='>app-laptop/tpacpi-bat-1.0'
 _PKG_TPSMAPI='app-laptop/tp_smapi'
 _PKG_ACPICALL='sys-power/acpi_call'
 _OPTIONAL_DEPEND='
