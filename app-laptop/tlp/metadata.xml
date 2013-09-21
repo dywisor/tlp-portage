@@ -15,6 +15,7 @@
 		<doc lang="de">http://thinkwiki.de/TLP_-_Linux_Stromsparen</doc>
 		<doc lang="en">http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html</doc>
 	</upstream>
+	<bugs-to>https://github.com/linrunner/TLP/issues</bugs-to>
 	<longdescription>
 		TLP is a collection of scripts enabling laptop-mode and implementing power save features for laptop hardware.
 		See the upstream docs and https://github.com/dywisor/tlp-gentoo-additions.
@@ -22,12 +23,12 @@
 	<use lang="en">
 		<flag name='tlp_suggests'>Pull in all optional dependencies</flag>
 		<flag name='rdw'>Radio device wizard: switch radios upon network connect/disconnect and dock/undock</flag>
+		<flag name='tpacpi-bundled'>Use the bundled tpacpi-bat script instead of <pkg>app-laptop/tpacpi-bat</pkg>.</flag>
 		<flag name='perl'>Depend on <pkg>dev-lang/perl</pkg>. Enables tlp-usblist and allows to use the bundled tpacpi-bat script.</flag>
 		<flag name='openrc'>Install an openrc init script. Recommended</flag>
 		<flag name='systemd'>Install a systemd service file. EXPERIMENTAL</flag>
 		<flag name='bash-completion'>Install bash-completion files for TLP.</flag>
 		<flag name='laptop-mode-tools'>Allow parallel installation of <pkg>app-laptop/laptop-mode-tools</pkg>
 		and <pkg>app-laptop/tlp</pkg>. NOT RECOMMENDED</flag>
-		<flag name='tpacpi-bundled'>Use the bundled tpacpi-bat script instead of <pkg>app-laptop/tpacpi-bat</pkg>.</flag>
 	</use>
 </pkgmetadata>

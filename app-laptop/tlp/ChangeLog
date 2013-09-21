@@ -2,6 +2,13 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-0.3.4 (21 Sep 2013)
+
+  21 Sep 2013; Andre Erdmann <dywi@mailerd.de> +tlp-0.4.ebuild
+  Version Bump with some notable changes, e.g. improves systemd support by
+  no longer depending on UPower being built with --enable-deprecated
+  (upower dependency completely dropped). See upstream changelog for details.
+
   19 Sep 2013; Andre Erdmann <dywi@mailerd.de>
   tlp-0.3.7.1.ebuild,
   tlp-0.3.8.1.ebuild,
