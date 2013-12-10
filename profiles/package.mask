@@ -1,3 +1,6 @@
-# André Erdmann <dywi@mailerd.de> (30 Jul 2013)
-# Mask devel version(s) for testing
+# André Erdmann <dywi@mailerd.de> (10 Dec 2013)
+# Mask old versions for removal in 30 days
+=app-laptop/tlp-0.3.7.1
+=app-laptop/tlp-0.3.8.1
+=app-laptop/tlp-0.3.9
 =app-laptop/tlp-0.3.9.9*
