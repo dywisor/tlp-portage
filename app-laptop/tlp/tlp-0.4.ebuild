@@ -74,6 +74,8 @@ src_unpack() {
 src_prepare() {
 	PATCHES=( "${WORKDIR}/gentoo/"{49tlp,Makefile}.patch )
 	cat "${WORKDIR}/gentoo/default.append" >> "${S}/default" || die
+	sed -r -e 's@^(\s*TLP_ENABLE=)[01]$@\10@' -i "${S}/default" || \
+		die "sed failed (TLP_ENABLE=0)"
 	base_src_prepare
 	chmod u+x "${WORKDIR}/gentoo/tlp_configure.sh" && \
 	ln -fs "${WORKDIR}/gentoo/tlp_configure.sh" "${S}/configure" || \
@@ -96,6 +98,7 @@ src_install() {
 	# LIBDIR:        use proper libary dir names instead of relying on a
 	#                 lib->lib64 symlink on amd64 systems
 	emake	DESTDIR="${ED}" LIBDIR=$(get_libdir) \
+		CONFFILE="${ED}etc/conf.d/${PN}" \
 		$(usex tpacpi-bundled "" TLP_NO_TPACPI=1) \
 		install-tlp $(usex rdw install-rdw "")
 
