@@ -1,0 +1,63 @@
+From a32aa80515912069f1d7af3e51261c17596035c7 Mon Sep 17 00:00:00 2001
+From: Thomas Koch <linrunner@gmx.net>
+Date: Fri, 13 Dec 2013 16:15:04 +0100
+Subject: [PATCH] Fix run-on-ac|bat: remove dependency on pm-utils/on_ac_power.
+
+(cherry picked from commit b1cc3941afc80b56f5c33227bcb8f54b01964bed)
+
+Conflicts:
+	debian/changelog
+---
+ tlp-run-on | 24 ++++++++++++++++++++++--
+ 1 file changed, 22 insertions(+), 2 deletions(-)
+
+diff --git a/tlp-run-on b/tlp-run-on
+index 9139b1b..6108f4a 100755
+--- a/tlp-run-on
++++ b/tlp-run-on
+@@ -4,6 +4,26 @@
+ # Copyright (c) 2013 Thomas Koch <linrunner at gmx.net>
+ # This software is licensed under the GPL v2 or later.
+ 
++# --- Constants
++readonly LIBDIRS="/usr/lib/tlp-pm /usr/lib64/tlp-pm"
++readonly LIBS="tlp-functions"
++
++# --- Locate and source libraries
++for libdir in $LIBDIRS; do [ -d $libdir ] && break; done
++if [ ! -d $libdir ]; then
++    echo "Error: missing library directory ($LIBDIRS)."
++    exit 1
++fi
++
++for lib in $LIBS; do
++    if [ ! -f $libdir/$lib ]; then
++        echo "Error: missing function library \'$libdir/$lib\'."
++        exit 1
++    fi
++    . $libdir/$lib
++done
++
++# --- MAIN
+ self=${0##*/}
+ 
+ cmd=$1
+@@ -16,13 +36,13 @@ shift
+ 
+ case $self in
+     run-on-ac)
+-        if on_ac_power; then
++        if get_power_state; then
+             $cmd $@
+         fi
+         ;;
+ 
+     run-on-bat)
+-        if ! on_ac_power; then
++        if ! get_power_state; then
+             $cmd $@
+         fi
+         ;;
+-- 
+1.8.5.1
+

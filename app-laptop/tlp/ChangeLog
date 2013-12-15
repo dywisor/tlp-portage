@@ -2,6 +2,15 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-0.4-r1 (15 Dec 2013)
+
+  15 Dec 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.4-r1.ebuild
+  Apply upstream patch that removes the dependency on on_ac_power.
+  This allows to drop sys-power/pm-utils from RDEPEND on systems
+  using systemd.
+  See upstream commit b1cc3941afc80b56f5c33227bcb8f54b01964bed.
+  Also check for CONFIG_ACPI_AC, CONFIG_POWER_SUPPLY in the ebuild.
+
   10 Dec 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.4.ebuild
   - Set TLP_ENABLE=0 in TLP's config file as it used to be prior to 0.4.
   - src_install(): call emake with CONFFILE set
