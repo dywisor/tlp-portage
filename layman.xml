@@ -7,8 +7,9 @@
     <homepage>https://github.com/dywisor/tlp-portage</homepage>
     <owner type="person">
       <name><![CDATA[dywisor]]></name>
+      <email>dywi@mailerd.de</email>
     </owner>
-    <source type="git">git@github.com:dywisor/tlp-portage.git</source>
+    <source type="git">git://github.com/dywisor/tlp-portage.git</source>
     <source type="git">https://github.com/dywisor/tlp-portage.git</source>
     <feed>https://github.com/dywisor/tlp-portage/commits/maint.atom</feed>
   </repo>
