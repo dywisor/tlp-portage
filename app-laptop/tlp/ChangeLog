@@ -2,6 +2,11 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-0.4.1 (02 Jan 2014)
+
+  02 Jan 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.4.1.ebuild
+  Latest upstream release, mostly containing compat changes.
+
 *tlp-0.4-r1 (15 Dec 2013)
 
   15 Dec 2013; Andre Erdmann <dywi@mailerd.de> tlp-0.4-r1.ebuild
