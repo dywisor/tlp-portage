@@ -31,11 +31,5 @@
 		<flag name='tpacpi-bundled'>Use the bundled tpacpi-bat script instead of <pkg>app-laptop/tpacpi-bat</pkg>.</flag>
 		<flag name='laptop-mode-tools'>Allow parallel installation of <pkg>app-laptop/laptop-mode-tools</pkg>
 		and <pkg>app-laptop/tlp</pkg>. NOT RECOMMENDED</flag>
-		<!-- flags no longer present since tlp-0.4.ebuild -->
-		<flag name='openrc'>Install an openrc init script. Recommended</flag>
-		<flag name='systemd'>Install a systemd service file. EXPERIMENTAL</flag>
-		<flag name='bash-completion'>Install bash-completion files for TLP.</flag>
-		<!-- 0.3.7.1 -->
-		<flag name='perl'>Depend on <pkg>dev-lang/perl</pkg>. Enables tlp-usblist and allows to use the bundled tpacpi-bat script.</flag>
 	</use>
 </pkgmetadata>
