@@ -10,7 +10,7 @@
 .. _tlp-portage:
    git://github.com/dywisor/tlp-portage.git
 
-.. _layman:
+.. _Layman - Gentoo Wiki:
    http://wiki.gentoo.org/wiki/Layman
 
 .. _tpacpi-bat:
@@ -34,7 +34,7 @@ The following commands (``$ <command...>``) should be run as root.
 It is assumed that your package manager is ``sys-apps/portage``.
 
 
-#. Install `layman`_
+#. Install layman
 
    #. Enable the git USE flag for layman::
 
@@ -45,7 +45,9 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
       $ emerge -a --noreplace ">=app-portage/layman-2"
 
-#. Make sure that ``/etc/portage/make.conf`` has the follwing line::
+   Also see `Layman - Gentoo Wiki`_.
+
+#. Make sure that ``/etc/portage/make.conf`` has the following line::
 
       source /var/lib/layman/make.conf
 
@@ -64,13 +66,13 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
 #. *(optional)* install/build kernel modules
 
-   This is required for battery charge threshold control.
+   This is required for ThinkPad advanced battery functions.
 
-   * Thinkpads up to Core 2 (and Sandy Bridge partially)::
+   * Thinkpads up to the Sandy Bridge generation (T420, X220 et al.)::
 
       $ emerge -a app-laptop/tp_smapi
 
-   * more recent Thinkpads::
+   * Thinkpads beginning with the Sandy Bridge Generation (T420, X220 et al.)::
 
       $ emerge -a app-laptop/acpi_call
 
