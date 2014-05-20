@@ -1,0 +1,8 @@
+# André Erdmann <dywi@mailerd.de> (20 May 2014)
+# Changed pm hook blacklist handling & config file location.
+# Masked for testing / until proper config file loc. + upgrade path
+# has been determined.
+#
+# https://github.com/dywisor/tlp-portage/issues/4
+#
+=app-laptop/tlp-0.5-r1
