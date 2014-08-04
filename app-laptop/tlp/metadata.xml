@@ -11,11 +11,13 @@
 			<email>linrunner@gmx.net</email>
 			<name>Thomas Koch</name>
 		</maintainer>
+		<remote-id type="github">linrunner/TLP</remote-id>
 		<changelog>https://raw.github.com/linrunner/TLP/master/debian/changelog</changelog>
 		<doc lang="de">http://thinkwiki.de/TLP_-_Linux_Stromsparen</doc>
 		<doc lang="en">http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html</doc>
 		<bugs-to>https://github.com/linrunner/TLP/issues</bugs-to>
 	</upstream>
+	<natural-name>TLP</natural-name>
 	<longdescription>
 		TLP is a collection of scripts enabling laptop-mode and implementing power save features for laptop hardware.
 		See the upstream docs and https://github.com/dywisor/tlp-gentoo-additions.
