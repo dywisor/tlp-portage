@@ -12,6 +12,7 @@ inherit eutils bash-completion-r1 git-2 linux-info systemd
 
 DESCRIPTION="Power-Management made easy, designed for Thinkpads."
 HOMEPAGE="http://linrunner.de/en/tlp/tlp.html"
+_README_URI="https://github.com/dywisor/tlp-portage/blob/maint/README.rst"
 
 SRC_URI="http://git.erdmann.es/trac/dywi_tlp-gentoo-additions/downloads/tlp-gentoo-additions-${PVR}.tar.bz2"
 RESTRICT="mirror"
@@ -81,11 +82,75 @@ src_install() {
 	newins "${WORKDIR}/gentoo/pm-blacklist" tlp
 }
 
+# tlp_try_copymove_file ( old_file, new_file )
+#
+#  very verbose hardlink||copy old_file->new_file function
+#
+tlp_try_copymove_file() {
+	[[ ( -n "${1-}" ) && ( -n "${2-}" ) ]] || die "bad usage"
+	local word
+
+	# hardlink or copy old_file->new_file (hardlink preferred) if all
+	# of the following conditions are met:
+	#
+	# * new_file does not exist (not exists := ( ! -e _ && ! -h _ )
+	# * old_file exists and is a file
+	#
+	# the checks/actions are racy,
+	#  e.g. if the user edits old_file while updating $PN
+	#
+	if [[ ( -e "${2}" ) || ( -h "${2}" ) ]]; then
+		elog "${2} exists - doing nothing."
+
+	elif [[ -h "${1}" ]]; then
+		ewarn "${1} is a symlink - cannot move files (manual update required)."
+
+	elif [[ ! -e "${1}" ]]; then
+		elog "${1} does not exist - no action required."
+
+	elif [[ ! -f "${1}" ]]; then
+		ewarn "${1} is not a file - manual update required."
+
+	elif {
+		word=
+		{ ln -- "${1}" "${2}" && word=hardlinked; } || \
+		{ cp -- "${1}" "${2}" && word=copied; }
+	} 2>>/dev/null; then
+		elog "${1} has been ${word:-%UNDEFINED%} to ${2}"
+		elog "Remove ${1} manually after reviewing changes."
+
+	else
+		ewarn "could copy config file to its new location - manual update required."
+	fi
+}
+
+pkg_preinst() {
+	local repl_pvr oldcfg newcfg word
+
+	for repl_pvr in ${REPLACING_VERSIONS-}; do
+		case "${repl_pvr}" in
+			0.[34]|0.[34].*|0.5)
+				oldcfg="/etc/conf.d/tlp"
+				newcfg="/etc/tlp.conf"
+
+				ewarn "Beginning with ${PN}-0.5-r1, the config file location"
+				ewarn "has been changed to /${newcfg} (from ${oldcfg})."
+				ewarn "The ebuild tries to handle this automatically."
+
+				tlp_try_copymove_file "${EROOT%/}${oldcfg}" "${EROOT%/}${newcfg}"
+
+				# do not repeat tlp_try_copymove_file()
+				# ($REPLACING_VERSIONS _could_ contain more than one $repl_pvr)
+				break
+			;;
+		esac
+	done
+}
+
 pkg_postinst() {
 	## postinst messages
 	elog "${PN^^} is disabled by default."
-	elog "Refer to https://github.com/dywisor/tlp-portage/blob/maint/README.rst for setup instructions."
-	ewarn "The config file location has changed to /etc/tlp.conf, which needs to be updated manually."
+	elog "Refer to ${_README_URI} for setup instructions."
 
 	if ! use tlp_suggests; then
 		local p a
