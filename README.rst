@@ -158,6 +158,13 @@ Kernel config considerations
 The following kernel options should be set to *y*:
 
 * CONFIG_DMIID
-* CONFIG_ACPI_PROC_EVENT
 * CONFIG_POWER_SUPPLY
 * CONFIG_ACPI_AC
+* CONFIG_ACPI_PROC_EVENT
+
+  removed in linux >= 3.12 (and deprecated before),
+  required for ``thinkpad-radiosw``
+  (``DEVICES_TO_ENABLE_ON_RADIOSW`` in the config file)
+
+  * enable if you have a ThinkPad and an older kernel (e.g. 3.10)
+  * don't care about it on newer kernel versions, but lose ``thinkpad-radiosw``
