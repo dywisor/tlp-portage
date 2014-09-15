@@ -132,6 +132,10 @@ It is assumed that your package manager is ``sys-apps/portage``.
    |              |              |         | (can only be deselected when         |
    |              | \- (systemd) |         | using systemd)                       |
    +--------------+--------------+---------+--------------------------------------+
+   | deprecated   | \-           | no      | install *thinkpad-radiosw*, which    |
+   |              |              |         | works with older kernel versions     |
+   |              |              |         | only.                                |
+   +--------------+--------------+---------+--------------------------------------+
    | tpacpi-\     | **yes**      | yes     | use the bundled version of           |
    | bundled      |              |         | `tpacpi-bat`_                        |
    |              |              |         |                                      |
