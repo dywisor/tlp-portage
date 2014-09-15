@@ -1,3 +1,11 @@
+# André Erdmann <dywi@mailerd.de> (15 Sep 2014)
+# ebuild builds against two live repos
+=app-laptop/tlp-9999
+
+# André Erdmann <dywi@mailerd.de> (15 Sep 2014)
+# Cleaned-up version of tlp-0.5-r1, masked for testing.
+=app-laptop/tlp-0.5-r2
+
 # André Erdmann <dywi@mailerd.de> (20 May 2014)
 # Changed pm hook blacklist handling & config file location.
 # Masked for testing / until proper config file loc. + upgrade path
