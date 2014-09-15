@@ -19,10 +19,20 @@
 	</upstream>
 	<natural-name>TLP</natural-name>
 	<longdescription>
-		TLP is a collection of scripts enabling laptop-mode and implementing power save features for laptop hardware.
-		See the upstream docs and https://github.com/dywisor/tlp-gentoo-additions.
+	TLP brings you the benefits of advanced power management for Linux without
+	the need to understand every technical detail. TLP comes with a default
+	configuration already optimized for battery life, so you may just install
+	and forget it. Nevertheless TLP is highly customizable to fulfil
+	your specific requirements.
+
+	TLP runs on every laptop brand.
+	Setting the battery charge thresholds is available for IBM/Lenovo ThinkPads only.
 	</longdescription>
 	<use lang="en">
+		<flag name='deprecated'>
+			Installs thinkpad-radiosw, which relies on deprecated kernel features
+			(CONFIG_ACPI_PROC_EVENT, removed in 3.12 and later).
+		</flag>
 		<flag name='pm-utils'>
 			Rely on <pkg>sys-power/pm-utils</pkg> for handling system
 			suspend/hibernate/resume. Only users of <pkg>sys-apps/systemd</pkg>

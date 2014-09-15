@@ -2,6 +2,20 @@
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-9999 (15 Sep 2014)
+*tlp-0.5-r2 (15 Sep 2014)
+
+  15 Sep 2014; Andre Erdmann <dywi@mailerd.de> +tlp-0.5-r2.ebuild,
+  +tlp-9999.ebuild, +files/pm-blacklist.0 +files/tlp-init.openrc, metadata.xml
+  Added a live ebuild and another revision for 0.5:
+  - both: wrt to github issue #5, added a "deprecated" USE flag,
+    which controls whether thinkpad-radiosw gets installed or not.
+    The ebuild does no longer print a warning about ACPI_PROC_EVENT if this
+    flag is disabled. acpid is a USE-dependent runtime dep now.
+  - both: use pm-blacklist/init script from FILESDIR
+  - 0.5-r2: drop git requirement, get upstream source tarball from github
+  - 0.5-r2: changed SRC_URI for gentoo-additions=>gentoo-patches
+
   04 Aug 2014; Andre Erdmann <dywi@mailerd.de> tlp-0.5-r1.ebuild
   Try to copy/hardlink /etc/conf.d/tlp->/etc/tlp.conf during
   pkg_preinst() when upgrading from < 0.5-r1
