@@ -19,7 +19,7 @@ KEYWORDS="~amd64 ~x86"
 MY_README_URI="https://github.com/dywisor/tlp-portage/blob/maint/README.rst"
 MY_CONFFILE="/etc/tlp.conf"
 
-# ebuild not in overlay, no point in trying to access mirrored files
+# ebuild in overlay, no point in trying to access mirrored files
 RESTRICT="mirror"
 
 LICENSE="GPL-2+ tpacpi-bundled? ( GPL-3 )"
@@ -153,7 +153,7 @@ pkg_preinst() {
 			0.[34]|0.[34].*|0.5|*9999)
 				# *9999: can't decide whether move is necessary or not, just try
 				oldcfg="/etc/conf.d/tlp"
-				newcfg="/etc/tlp.conf"
+				newcfg="${MY_CONFFILE}"
 
 				ewarn "Beginning with ${PN}-0.5-r1, the config file location"
 				ewarn "has been changed to /${newcfg} (from ${oldcfg})."

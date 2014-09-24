@@ -96,16 +96,14 @@ src_prepare() {
 }
 
 src_install() {
-	emake DESTDIR="${ED}" TLP_LIBDIR="/usr/$(get_libdir)" \
+	emake DESTDIR="${ED}" \
+		TLP_LIBDIR="/usr/$(get_libdir)" \
+		TLP_SYSD="$(systemd_get_unitdir)" \
 		TLP_CONF="${MY_CONFFILE}" \
-		TLP_NO_INIT=1 TLP_NO_BASHCOMP=1 \
+		TLP_NO_INIT=1 TLP_NO_BASHCOMP=1 TLP_WITH_SYSTEMD=1 \
 		$(usex tpacpi-bundled TLP_NO_TPACPI={0,1}) \
 		$(usex pm-utils TLP_NO_PMUTILS={0,1}) \
 		install-tlp $(usex rdw install-rdw "")
-
-	## init/service file(s)
-	newinitd "${FILESDIR}/${PN}-init.openrc" "${PN}"
-	systemd_dounit "${PN}"{,-sleep}.service
 
 	## bashcomp
 	newbashcomp "${PN}.bash_completion" "${PN}"
@@ -171,7 +169,7 @@ pkg_preinst() {
 			0.[34]|0.[34].*|0.5|*9999)
 				# *9999: can't decide whether move is necessary or not, just try it
 				oldcfg="/etc/conf.d/tlp"
-				newcfg="/etc/tlp.conf"
+				newcfg="${MY_CONFFILE}"
 
 				ewarn "Beginning with ${PN}-0.5-r1, the config file location"
 				ewarn "has been changed to /${newcfg} (from ${oldcfg})."
