@@ -105,6 +105,11 @@ It is assumed that your package manager is ``sys-apps/portage``.
       $ systemctl enable tlp.service
       $ systemctl enable tlp-sleep.service
 
+   ``systemd-rfkill@.service`` should be masked as it conflicts with
+   ``RESTORE_DEVICE_STATE_ON_STARTUP``/``DEVICES_TO_{EN,DIS}ABLE_ON_STARTUP``::
+
+      $ systemctl mask systemd-rfkill@.service
+
 #. Enable or restart/reload the *acpid* service
 
 #. Start **TLP**::
