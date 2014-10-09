@@ -11,7 +11,7 @@ HOMEPAGE="http://linrunner.de/tlp"
 
 SRC_URI="
 	https://github.com/linrunner/TLP/archive/${PV}.tar.gz -> ${P}.tar.gz
-	http://erdmann.es/dywi/dl/tlp/tlp-gentoo-patches-${PVR}.tar.xz
+	http://erdmann.es/dywi/dl/tlp/tlp-gentoo-patches-${PV}.tar.xz
 "
 S="${WORKDIR}/${PN^^}-${PV}"
 KEYWORDS="~amd64 ~x86"
@@ -86,6 +86,9 @@ src_install() {
 		$(usex tpacpi-bundled TLP_NO_TPACPI={0,1}) \
 		$(usex pm-utils TLP_NO_PMUTILS={0,1}) \
 		install-tlp $(usex rdw install-rdw "")
+
+	## init/service file(s)
+	newinitd "${FILESDIR}/${PN}-init.openrc" "${PN}"
 
 	## bashcomp
 	newbashcomp "${PN}.bash_completion" "${PN}"

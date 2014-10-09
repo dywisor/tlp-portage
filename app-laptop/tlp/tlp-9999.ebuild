@@ -106,6 +106,9 @@ src_install() {
 		$(usex pm-utils TLP_NO_PMUTILS={0,1}) \
 		install-tlp $(usex rdw install-rdw "")
 
+	## init/service file(s)
+	newinitd "${FILESDIR}/${PN}-init.openrc" "${PN}"
+
 	## bashcomp
 	newbashcomp "${PN}.bash_completion" "${PN}"
 
