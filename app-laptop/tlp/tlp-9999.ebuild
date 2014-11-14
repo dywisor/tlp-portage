@@ -62,11 +62,13 @@ pkg_pretend() {
 
 	CONFIG_CHECK+=" ~ACPI_AC"
 	CONFIG_CHECK+=" ~DMIID"
-	ERROR_DMIID='DMIID is required by tlp-stat and tpacpi-bat'
+	ERROR_DMIID="DMIID is required by tlp-stat and tpacpi-bat"
+	CONFIG_CHECK+=" ~SENSORS_CORETEMP"
+	ERROR_SENSORS_CORETEMP="coretemp module is used by tlp-stat"
 
 	# transient kconfig recommendation (from sys-power/linux-x86-power-tools)
 	CONFIG_CHECK+=" ~X86_MSR"
-	ERROR_X86_MSR="X86_MSR is required by x86_energy_perf_policy"
+	ERROR_X86_MSR="msr module is required by x86_energy_perf_policy"
 
 	if use deprecated; then
 		CONFIG_CHECK+=" ~ACPI_PROC_EVENT"

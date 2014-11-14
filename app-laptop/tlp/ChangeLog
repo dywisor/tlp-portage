@@ -3,6 +3,9 @@
 # $Header: $
 
   14 Nov 2014; Andre Erdmann <dywi@mailerd.de> tlp-9999.ebuild:
+  Also recommended SENSORS_CORETEMP kernel config option.
+
+  14 Nov 2014; Andre Erdmann <dywi@mailerd.de> tlp-9999.ebuild:
   Use global "bluetooth" USE flag for pulling in optional bluetooth
   dependencies.
 
