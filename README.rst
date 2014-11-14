@@ -19,12 +19,17 @@
 .. _upstream documentation:
    http://www.linrunner.de/en/tlp/docs/tlp-configuration.html
 
+.. _Sabayon Package Repo:
+   http://yugoloth.de/dywi/tlp-sabayon/
 
 =============
  tlp-portage
 =============
 
 Overlay for installing `TLP`_ on Gentoo/Funtoo/... systems.
+
+Binary packages for Sabayon are available, too,
+see the `Sabayon Package Repo`_ for details.
 
 
 Setup Instructions
@@ -45,7 +50,7 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
       $ emerge -a --noreplace ">=app-portage/layman-2"
 
-   Also see `Layman - Gentoo Wiki`_.
+   See also `Layman - Gentoo Wiki`_.
 
 #. Make sure that ``/etc/portage/make.conf`` has the following line::
 
@@ -59,10 +64,19 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
       $ layman --overlays="https://raw.github.com/dywisor/tlp-portage/maint/layman.xml" --fetch --add=tlp
 
-#. **stable arch** only (amd64, x86): unmask *TLP*::
+#. **stable arch** only (amd64, x86): unmask *TLP*:
+
+   .. code::
 
       $ mkdir /etc/portage/package.accept_keywords
       $ echo "app-laptop/tlp" > /etc/portage/package.accept_keywords/tlp
+
+   *Future* releases (>=0.6.900):
+   unmask sys-power/linux-x86-power-tools or sys-apps/linux-misc-apps:
+
+   .. code::
+
+      $ echo "sys-power/linux-x86-power-tools" >> /etc/portage/package.accept_keywords/tlp
 
 #. *(optional)* install/build kernel modules
 
@@ -141,6 +155,9 @@ It is assumed that your package manager is ``sys-apps/portage``.
    |              |              |         | works with older kernel versions     |
    |              |              |         | only.                                |
    +--------------+--------------+---------+--------------------------------------+
+   | bluetooth    | \-           | no      | install optional bluetooth           |
+   |              |              |         | dependencies (bluez)                 |
+   +--------------+--------------+---------+--------------------------------------+
    | tpacpi-\     | **yes**      | yes     | use the bundled version of           |
    | bundled      |              |         | `tpacpi-bat`_                        |
    |              |              |         |                                      |
@@ -169,6 +186,8 @@ The following kernel options should be set to *y*:
 * CONFIG_DMIID
 * CONFIG_POWER_SUPPLY
 * CONFIG_ACPI_AC
+* CONFIG_SENSORS_CORETEMP
+* CONFIG_X86_MSR (*future* releases / ``-9999`` live ebuild)
 * CONFIG_ACPI_PROC_EVENT
 
   removed in linux >= 3.12 (and deprecated before),
