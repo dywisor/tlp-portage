@@ -3,6 +3,10 @@
 # $Header: $
 
   14 Nov 2014; Andre Erdmann <dywi@mailerd.de> tlp-9999.ebuild:
+  Use global "bluetooth" USE flag for pulling in optional bluetooth
+  dependencies.
+
+  14 Nov 2014; Andre Erdmann <dywi@mailerd.de> tlp-9999.ebuild:
   Depend on x86_energy_perf_policy, provided by either
   sys-power/linux-x86-power-tools or sys-apps/linux-misc-apps.
 
