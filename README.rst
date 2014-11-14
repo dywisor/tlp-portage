@@ -100,7 +100,7 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
       $ emerge -a app-laptop/tlp
 
-#. Edit *TLP's* configuration file **/etc/conf.d/tlp**
+#. Edit *TLP's* configuration file **/etc/tlp.conf**
 
    In contrast to other distributions, the config file is not in */etc/default*
    and **you have to enable TLP explicitly** by setting ``TLP_ENABLE=1``.
