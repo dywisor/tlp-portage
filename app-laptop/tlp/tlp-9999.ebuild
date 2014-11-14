@@ -47,6 +47,7 @@ RDEPEND="
 	pm-utils?  ( sys-power/pm-utils )
 	!pm-utils? ( sys-apps/systemd )
 	|| ( net-wireless/iw net-wireless/wireless-tools )
+	|| ( sys-power/linux-x86-power-tools sys-apps/linux-misc-apps )
 	net-wireless/rfkill
 
 	rdw?                ( net-misc/networkmanager )
@@ -56,8 +57,15 @@ RDEPEND="
 "
 
 pkg_pretend() {
-	CONFIG_CHECK="~DMIID ~POWER_SUPPLY ~ACPI_AC"
+	CONFIG_CHECK="~POWER_SUPPLY"
+
+	CONFIG_CHECK+=" ~ACPI_AC"
+	CONFIG_CHECK+=" ~DMIID"
 	ERROR_DMIID='DMIID is required by tlp-stat and tpacpi-bat'
+
+	# transient kconfig recommendation (from sys-power/linux-x86-power-tools)
+	CONFIG_CHECK+=" ~X86_MSR"
+	ERROR_X86_MSR="X86_MSR is required by x86_energy_perf_policy"
 
 	if use deprecated; then
 		CONFIG_CHECK+=" ~ACPI_PROC_EVENT"
