@@ -71,7 +71,6 @@ It is assumed that your package manager is ``sys-apps/portage``.
       $ mkdir /etc/portage/package.accept_keywords
       $ echo "app-laptop/tlp" > /etc/portage/package.accept_keywords/tlp
 
-   *Future* releases (>=0.6.900):
    unmask sys-power/linux-x86-power-tools or sys-apps/linux-misc-apps:
 
    .. code::
@@ -187,7 +186,7 @@ The following kernel options should be set to *y*:
 * CONFIG_POWER_SUPPLY
 * CONFIG_ACPI_AC
 * CONFIG_SENSORS_CORETEMP
-* CONFIG_X86_MSR (*future* releases / ``-9999`` live ebuild)
+* CONFIG_X86_MSR
 * CONFIG_ACPI_PROC_EVENT
 
   removed in linux >= 3.12 (and deprecated before),
