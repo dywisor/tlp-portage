@@ -62,7 +62,8 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
 #. Add the *tlp-portage* overlay with layman::
 
-      $ layman --overlays="https://raw.github.com/dywisor/tlp-portage/maint/layman.xml" --fetch --add=tlp
+      $ wget "https://raw.github.com/dywisor/tlp-portage/maint/layman.xml" -O /etc/layman/overlays/tlp.xml
+      $ layman -f -a tlp
 
 #. **stable arch** only (amd64, x86): unmask *TLP*:
 
