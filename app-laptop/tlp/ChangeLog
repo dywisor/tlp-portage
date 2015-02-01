@@ -2,6 +2,18 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tlp-0.7 (01 Feb 2015)
+  01 Feb 2015; Andre Erdmann <dywi@mailerd.de> +tlp-0.7.ebuild:
+  Latest upstream release.
+
+  01 Feb 2015; Andre Erdmann <dywi@mailerd.de> tlp-0.5.ebuild,
+  tlp-0.5-r2.ebuild tlp-0.6-r1.ebuild:
+  Fix $LICENSE of tpacpi-bat (GPL-3 => GPL-3+).
+
+  01 Feb 2015; Andre Erdmann <dywi@mailerd.de> tlp-9999.ebuild:
+  Update openrc init script (wrt bluetooth/NetworkManager, and USE=deprecated);
+  Install COPYING, AUTHORS; Fix $LICENSE of tpacpi-bat (GPL-3 => GPL-3+).
+
   14 Nov 2014; Andre Erdmann <dywi@mailerd.de> tlp-9999.ebuild:
   Also recommended SENSORS_CORETEMP kernel config option.
 

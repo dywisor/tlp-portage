@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -22,7 +22,7 @@ MY_CONFFILE="/etc/tlp.conf"
 # ebuild in overlay, no point in trying to access mirrored files
 RESTRICT="mirror"
 
-LICENSE="GPL-2+ tpacpi-bundled? ( GPL-3 )"
+LICENSE="GPL-2+ tpacpi-bundled? ( GPL-3+ )"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="tlp_suggests rdw laptop-mode-tools +tpacpi-bundled +pm-utils deprecated"

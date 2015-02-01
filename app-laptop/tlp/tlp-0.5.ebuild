@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,7 @@ HOMEPAGE="http://linrunner.de/en/tlp/tlp.html"
 SRC_URI="http://git.erdmann.es/trac/dywi_tlp-gentoo-additions/downloads/tlp-gentoo-additions-${PV}.tar.bz2"
 RESTRICT="mirror"
 
-LICENSE="GPL-2+ tpacpi-bundled? ( GPL-3 )"
+LICENSE="GPL-2+ tpacpi-bundled? ( GPL-3+ )"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="tlp_suggests rdw laptop-mode-tools +tpacpi-bundled +pm-utils"
