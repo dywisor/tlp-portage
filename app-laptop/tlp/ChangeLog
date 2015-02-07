@@ -2,6 +2,11 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Feb 2015; Andre Erdmann <dywi@mailerd.de> +tlp-0.7-r1.ebuild,
+  tlp-9999.ebuild:
+  Install bashcomp alias symlinks, required for autoloading of completion
+  files (in >=app-shells/bash-completion-2.1-r90).
+
   01 Feb 2015; Andre Erdmann <dywi@mailerd.de> -tlp-0.5.ebuild,
   -tlp-0.5-r2.ebuild:
   Remove old ebuilds.
