@@ -60,6 +60,8 @@ RDEPEND="
 pkg_pretend() {
 	CONFIG_CHECK="~POWER_SUPPLY"
 
+	CONFIG_CHECK+=" ~PM_RUNTIME"
+	ERROR_PM_RUNTIME="PM_RUNTIME is required for USB/PCI(e) autosuspend"
 	CONFIG_CHECK+=" ~ACPI_AC"
 	CONFIG_CHECK+=" ~DMIID"
 	ERROR_DMIID="DMIID is required by tlp-stat and tpacpi-bat"
