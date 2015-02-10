@@ -183,6 +183,7 @@ Kernel config considerations
 
 The following kernel options should be set to *y*:
 
+* CONFIG_PM_RUNTIME
 * CONFIG_DMIID
 * CONFIG_POWER_SUPPLY
 * CONFIG_ACPI_AC
