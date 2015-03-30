@@ -2,8 +2,13 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+* tlp-0.7-r3 (30 Mar 2015)
+  30 Mar 2015; Andre Erdmann <dywi@mailerd.de>
+  -tlp-0.7-r2.ebuild, +tlp-0.7-r3.ebuild:
+  Fix: actually apply the patches mentioned in -r2.
+
 * tlp-0.7-r2 (30 Mar 2015)
-  30 Mar 2015; Andre Erdmann <dywi@mailerd.de> +tlp-0.7-r2.ebuild
+  30 Mar 2015; Andre Erdmann <dywi@mailerd.de> +tlp-0.7-r2.ebuild:
   Add upstream patches for Issues #123, #124
   and add kernel config check for CONFIG_PM.
 

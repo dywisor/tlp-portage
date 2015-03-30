@@ -80,6 +80,8 @@ src_prepare() {
 	local -a PATCHES=()
 	local PDIR="${WORKDIR}/patches"
 
+	PATCHES+=( "${PDIR}/0001-Issue-123-tlp-stat-detect-kernel-config-with-PM_RUNT.patch" )
+	PATCHES+=( "${PDIR}/0002-Issue-124-tlp-recalibrate-fix-exitcode-check.patch" )
 	PATCHES+=( "${PDIR}/0003-gentoo-base.patch" )
 
 	use deprecated     || PATCHES+=( "${PDIR}/0004-no-radiosw.patch" )
