@@ -88,7 +88,7 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
    * Thinkpads beginning with the Sandy Bridge Generation (T420, X220 et al.)::
 
-      $ emerge -a app-laptop/acpi_call
+      $ emerge -a sys-power/acpi_call
 
 #. *(optional)* choose USE flags, for example::
 
