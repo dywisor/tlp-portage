@@ -106,7 +106,7 @@ src_prepare() {
 		$(usex deprecated     "" "livepatch-no-deprecated") \
 		$(usex tpacpi-bundled "" "livepatch-unbundle-tpacpi-bat")
 
-	cp "${FILESDIR}/${PN}-init.openrc-r1" "${S}/tlp.openrc" || die
+	cp "${FILESDIR}/${PN}-init.openrc-r2" "${S}/tlp.openrc" || die
 	if ! use deprecated; then
 		sed -r -e '/USE=deprecated/,+2d' -i "${S}/tlp.openrc" || die
 	fi

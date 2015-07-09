@@ -2,6 +2,11 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  13 Apr 2015; Andre Erdmann <dywi@mailerd.de>
+  tlp-9999.ebuild, +files/tlp-init.openrc-r2:
+  Changes hashbang in openrc init script from
+  /sbin/runscript to /sbin/openrc-run.
+
 * tlp-0.7-r3 (30 Mar 2015)
   30 Mar 2015; Andre Erdmann <dywi@mailerd.de>
   -tlp-0.7-r2.ebuild, +tlp-0.7-r3.ebuild:
