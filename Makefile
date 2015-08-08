@@ -16,7 +16,7 @@ clean:
 	rm -f -- $(O)/.travis.yml.new
 
 travis: $(O)/.travis.yml
-	git diff --quiet -- '$(<)' || case ${?} in \
+	git diff --quiet -- '$(<)' || case $${?} in \
 		1) git commit '$(<)' -m 'update $(<F)' ;; \
 		*) exit 5 ;; \
 	esac
