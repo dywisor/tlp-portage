@@ -2,6 +2,15 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+* tlp-0.8 (08 Aug 2015)
+  08 Aug 2015; Andre Erdmann <dywi@mailerd.de> +tlp-0.8.ebuild:
+  Latest upstream release.
+  Note that the USB_DRIVER_BLACKLIST feature had to be removed because of
+  systemd-udevd changes, use USB_BLACKLIST instead.
+  Switched to the "openrc-run" run script (same as already used for -9999).
+  Removed config file migration code, users upgrading from tlp <= 0.5
+  need to edit /etc/tlp.conf and remove /etc/conf.d/tlp manually.
+
   13 Apr 2015; Andre Erdmann <dywi@mailerd.de>
   tlp-9999.ebuild, +files/tlp-init.openrc-r2:
   Changes hashbang in openrc init script from
