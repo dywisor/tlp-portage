@@ -2,6 +2,10 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+* tlp-9999-r1 (09 Mar 2016)
+  09 Mar 2016; Andre Erdmann <dywi@mailerd.de> +tlp-9999-r1.ebuild:
+  Reintroduce the live ebuild; note that EPREFIX is not supported.
+
   02 Sep 2015; Andre Erdmann <dywi@mailerd.de> -tlp-9999.ebuild:
   Remove outdated live ebuild.
   Recent upstream changes require an ebuild overhaul (9999-r1).
