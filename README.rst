@@ -119,8 +119,12 @@ It is assumed that your package manager is ``sys-apps/portage``.
       $ systemctl enable tlp.service
       $ systemctl enable tlp-sleep.service
 
-   ``systemd-rfkill@.service`` should be masked as it conflicts with
+   ``systemd-rfkill`` should be masked as it conflicts with
    ``RESTORE_DEVICE_STATE_ON_STARTUP``/``DEVICES_TO_{EN,DIS}ABLE_ON_STARTUP``::
+
+      $ systemctl mask systemd-rfkill.socket systemd-rfkill.service
+
+   Users of systemd prior to v227 need to mask ``systemd-rfkill@`` instead::
 
       $ systemctl mask systemd-rfkill@.service
 
@@ -154,6 +158,8 @@ It is assumed that your package manager is ``sys-apps/portage``.
    | deprecated   | \-           | no      | install *thinkpad-radiosw*, which    |
    |              |              |         | works with older kernel versions     |
    |              |              |         | only.                                |
+   |              |              |         |                                      |
+   |              |              |         | removed in 0.9  (*future* release)   |
    +--------------+--------------+---------+--------------------------------------+
    | bluetooth    | \-           | no      | install optional bluetooth           |
    |              |              |         | dependencies (bluez)                 |
@@ -197,3 +203,5 @@ The following kernel options should be set to *y*:
 
   * enable if you have a ThinkPad and an older kernel (e.g. 3.10)
   * don't care about it on newer kernel versions, but lose ``thinkpad-radiosw``
+
+  Future versions of TLP (>= 0.9) will no longer support this feature.
