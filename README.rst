@@ -189,15 +189,17 @@ Kernel config considerations
 
 The following kernel options should be set to *y*:
 
-* CONFIG_PM_RUNTIME
+* CONFIG_PM
+* CONFIG_PM_RUNTIME (Linux < 3.19 only)
 * CONFIG_DMIID
 * CONFIG_POWER_SUPPLY
 * CONFIG_ACPI_AC
 * CONFIG_SENSORS_CORETEMP
 * CONFIG_X86_MSR
+
 * CONFIG_ACPI_PROC_EVENT
 
-  removed in linux >= 3.12 (and deprecated before),
+  removed in Linux >= 3.12 (and deprecated before),
   required for ``thinkpad-radiosw``
   (``DEVICES_TO_ENABLE_ON_RADIOSW`` in the config file)
 
