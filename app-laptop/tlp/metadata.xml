@@ -17,7 +17,6 @@
 		<doc lang="en">http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html</doc>
 		<bugs-to>https://github.com/linrunner/TLP/issues</bugs-to>
 	</upstream>
-	<natural-name>TLP</natural-name>
 	<longdescription>
 	TLP brings you the benefits of advanced power management for Linux without
 	the need to understand every technical detail. TLP comes with a default

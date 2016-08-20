@@ -9,21 +9,35 @@ inherit eutils bash-completion-r1 linux-info systemd udev
 DESCRIPTION="Advanced Power Management for Linux"
 HOMEPAGE="http://linrunner.de/tlp"
 
-inherit git-r3
+if [[ "${PV}" == 9999* ]]; then
+	inherit git-r3
 
-# note that this ebuild builds against 2 live repos
-EGIT_REPO_URI="
-	git://github.com/linrunner/TLP.git
-	https://github.com/linrunner/TLP.git"
-EGIT_BRANCH="master"
-SRC_URI=""
-KEYWORDS=""
+	# note that this ebuild builds against 2 live repos
+	EGIT_REPO_URI="
+		git://github.com/linrunner/TLP.git
+		https://github.com/linrunner/TLP.git"
+	EGIT_BRANCH="master"
+	SRC_URI=""
+	KEYWORDS=""
 
-MY_ADDITIONS_REPO_URI="
-	git://github.com/dywisor/tlp-gentoo-additions.git
-	https://github.com/dywisor/tlp-gentoo-additions.git
-"
-MY_ADDITIONS_REMOTE_REF="refs/heads/master"
+	MY_ADDITIONS_REPO_URI="
+		git://github.com/dywisor/tlp-gentoo-additions.git
+		https://github.com/dywisor/tlp-gentoo-additions.git
+	"
+
+	MY_ADDITIONS_REMOTE_REF="refs/heads/master"
+
+else
+	SRC_URI="
+		https://github.com/linrunner/TLP/archive/${PV}.tar.gz -> ${P}.tar.gz
+		http://erdmann.es/dywi/dl/tlp/tlp-gentoo-patches-${PV}.tar.xz
+	"
+	S="${WORKDIR}/${PN^^}-${PV}"
+	KEYWORDS="~amd64 ~x86"
+
+	# ebuild in overlay, no point in trying to access mirrored files
+	RESTRICT="mirror"
+fi
 
 MY_README_URI="https://github.com/dywisor/tlp-portage/blob/maint/README.rst"
 MY_CONFFILE="/etc/tlp.conf"
@@ -77,28 +91,44 @@ pkg_pretend() {
 pkg_setup() { :; }
 
 src_unpack() {
-	# upstream repo fetch/checkout
-	git-r3_src_unpack
+	if [[ "${PV}" == 9999* ]]; then
+		# upstream repo fetch/checkout
+		git-r3_src_unpack
 
-	# additions repo for live patching
-	git-r3_fetch \
-		"${MY_ADDITIONS_REPO_URI}" "${MY_ADDITIONS_REMOTE_REF}"
-	git-r3_checkout \
-		"${MY_ADDITIONS_REPO_URI}" "${WORKDIR}/gentoo-additions"
+		# additions repo for live patching
+		git-r3_fetch \
+			"${MY_ADDITIONS_REPO_URI}" "${MY_ADDITIONS_REMOTE_REF}"
+		git-r3_checkout \
+			"${MY_ADDITIONS_REPO_URI}" "${WORKDIR}/gentoo-additions"
+	else
+		default
+	fi
 }
 
 src_prepare() {
-	# * relocate config file to /etc/tlp.conf (upstream: /etc/default/tlp)
-	# * disable TLP by default (-- or enable init scripts in postinst...)
-	# * append TLP_LOAD_MODULES config option
-	# * lspci is in sbin => tlp-pcilist in sbin
-	k="$(TZ=UTC date "+%Y%m%d")"
-	[ -n "${k}" ] || die "Failed to get time stamp"
-	emake -C "${WORKDIR}/gentoo-additions" \
-		TLP_SRC="${S}" TLP_CONF="${MY_CONFFILE}" \
-		TLP_APPENDVER="+git-${EGIT_BRANCH:-live}-${k}" \
-		livepatch-base \
-		$(usex tpacpi-bundled "" "livepatch-unbundle-tpacpi-bat")
+	if [[ "${PV}" == 9999* ]]; then
+		# * relocate config file to /etc/tlp.conf (upstream: /etc/default/tlp)
+		# * disable TLP by default (-- or enable init scripts in postinst...)
+		# * append TLP_LOAD_MODULES config option
+		# * lspci is in sbin => tlp-pcilist in sbin
+		k="$(TZ=UTC date "+%Y%m%d")"
+		[ -n "${k}" ] || die "Failed to get time stamp"
+		emake -C "${WORKDIR}/gentoo-additions" \
+			TLP_SRC="${S}" TLP_CONF="${MY_CONFFILE}" \
+			TLP_APPENDVER="+git-${EGIT_BRANCH:-live}-${k}" \
+			livepatch-base \
+			$(usex tpacpi-bundled "" "livepatch-unbundle-tpacpi-bat")
+	else
+		local -a PATCHES=()
+		local PDIR="${WORKDIR}/patches"
+
+		PATCHES+=( "${PDIR}/0001-gentoo-base.patch" )
+
+		use tpacpi-bundled || \
+			PATCHES+=( "${PDIR}/0002-unbundle-tpacpi-bat.patch" )
+
+		epatch "${PATCHES[@]}"
+	fi
 
 	cp "${FILESDIR}/${PN}-init.openrc-r2" "${S}/tlp.openrc" || die
 	sed -r -e '/USE=deprecated/,+2d' -i "${S}/tlp.openrc" || die
@@ -141,42 +171,14 @@ src_install() {
 	newins "${FILESDIR}/pm-blacklist.0" tlp
 }
 
-pkg_preinst() {
-	local repl_pvr oldcfg newcfg
-
-	for repl_pvr in ${REPLACING_VERSIONS-}; do
-		case "${repl_pvr}" in
-			0.[34]|0.[34].*|0.5|*9999)
-				# *9999: can't decide whether move is necessary or not, just try it
-				oldcfg="/etc/conf.d/tlp"
-				newcfg="${MY_CONFFILE}"
-
-				ewarn "Beginning with ${PN}-0.5-r1, the config file location"
-				ewarn "has been changed to ${newcfg} (from ${oldcfg})."
-
-				# do not repeat
-				# ($REPLACING_VERSIONS _could_ contain more than one $repl_pvr)
-				break
-			;;
-		esac
-	done
-}
-
 pkg_postinst() {
 	## postinst messages
 	elog "${PN^^} is disabled by default."
 	elog "Refer to ${MY_README_URI} for setup instructions."
 
 	if ! use tlp_suggests; then
-		local pkg
-		einfo "In order to get full functionality, the following packages should be installed:"
-		for pkg in ${_OPTIONAL_RDEPEND?}; do
-			if has_version "${pkg}"; then
-				einfo "- ${pkg} (already installed)"
-			else
-				einfo "- ${pkg}"
-			fi
-		done
+		elog "Optional dependencies:"
+		optfeature "full functionality" "${_OPTIONAL_RDEPEND}"
 	fi
 
 	! use laptop-mode-tools || ewarn \
