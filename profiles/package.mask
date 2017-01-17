@@ -1,3 +1,11 @@
+# André Erdmann <dywi@mailerd.de> (17 Jan 2017)
+# Old ebuilds. Masked for removal in 30 days.
+=app-laptop/tlp-0.6-r1
+=app-laptop/tlp-0.7
+=app-laptop/tlp-0.7-r1
+=app-laptop/tlp-0.7-r3
+=app-laptop/tlp-0.8
+
 # André Erdmann <dywi@mailerd.de> (15 Sep 2014)
 # ebuild builds against two live repos
 >=app-laptop/tlp-9999
