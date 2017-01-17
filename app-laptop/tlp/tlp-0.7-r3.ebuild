@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://linrunner.de/tlp"
 
 SRC_URI="
 	https://github.com/linrunner/TLP/archive/${PV}.tar.gz -> ${P}.tar.gz
-	http://erdmann.es/dywi/dl/tlp/tlp-gentoo-patches-${PVR}.tar.xz
+	https://tlp-gentoo-additions.s3.amazonaws.com/tlp-gentoo-patches-${PVR}.tar.xz
 "
 S="${WORKDIR}/${PN^^}-${PV}"
 KEYWORDS="~amd64 ~x86"

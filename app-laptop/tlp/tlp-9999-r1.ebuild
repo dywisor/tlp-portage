@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -30,7 +30,7 @@ if [[ "${PV}" == 9999* ]]; then
 else
 	SRC_URI="
 		https://github.com/linrunner/TLP/archive/${PV}.tar.gz -> ${P}.tar.gz
-		http://erdmann.es/dywi/dl/tlp/tlp-gentoo-patches-${PV}.tar.xz
+		https://tlp-gentoo-additions.s3.amazonaws.com/tlp-gentoo-patches-${PV}.tar.xz
 	"
 	S="${WORKDIR}/${PN^^}-${PV}"
 	KEYWORDS="~amd64 ~x86"
