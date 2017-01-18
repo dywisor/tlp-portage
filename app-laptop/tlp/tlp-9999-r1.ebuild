@@ -45,7 +45,7 @@ MY_CONFFILE="/etc/tlp.conf"
 LICENSE="GPL-2+ tpacpi-bundled? ( GPL-3+ )"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="tlp_suggests rdw laptop-mode-tools +tpacpi-bundled +pm-utils bluetooth"
+IUSE="tlp_suggests rdw +tpacpi-bundled +pm-utils bluetooth"
 
 _OPTIONAL_RDEPEND="
 	sys-apps/smartmontools
@@ -67,7 +67,6 @@ RDEPEND="
 	rdw?                ( net-misc/networkmanager )
 	tlp_suggests?       ( ${_OPTIONAL_RDEPEND} )
 	bluetooth?          ( sys-apps/dbus net-wireless/bluez )
-	!laptop-mode-tools? ( !app-laptop/laptop-mode-tools )
 "
 
 pkg_pretend() {
@@ -180,9 +179,6 @@ pkg_postinst() {
 		elog "Optional dependencies:"
 		optfeature "full functionality" "${_OPTIONAL_RDEPEND}"
 	fi
-
-	! use laptop-mode-tools || ewarn \
-		"Reminder: don't run laptop-mode-tools and ${PN} at the same time."
 
 	use tpacpi-bundled || ewarn \
 		"USE=-tpacpi-bundled: do not report bugs about tpacpi-bat upstream."

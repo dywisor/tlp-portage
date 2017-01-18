@@ -2,6 +2,19 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jan 2017; André Erdmann <dywi@mailerd.de> tlp-9999-r1.ebuild:
+  Drop "laptop-mode-tools" USE flag.
+  While running both app-laptop/laptop-mode-tools and app-laptop/tlp
+  at the same time is unsupported, laptop-mode-tools is not the only
+  prog/solution that interferes with TLP (think custom udev rules,
+  for example).
+
+  17 Jan 2017; André Erdmann <dywi@mailerd.de> tlp-0.6-r1.ebuild,
+  tlp-0.7.ebuild, tlp-0.7-r1.ebuild, tlp-0.7-r3.ebuild,
+  tlp-0.8.ebuild, tlp-0.9.ebuild, tlp-9999-r1.ebuild:
+  tlp-gentoo-patches files have been moved from to aws s3,
+  modified SRC_URI to reflect this change.
+
   20 Aug 2016; Andre Erdmann <dywi@mailerd.de> tlp-9999-r1.ebuild,
   metadata.xml:
   Update live ebuild: combined live/release-ver ebuild,
