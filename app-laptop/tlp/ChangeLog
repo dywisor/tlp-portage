@@ -19,6 +19,10 @@
   tlp-gentoo-patches files have been moved from to aws s3,
   modified SRC_URI to reflect this change.
 
+* tlp-0.9 (20 Aug 2016)
+  20 Aug 2016; Andre Erdmann <dywi@mailerd.de> +tlp-0.9.ebuild:
+  Latest upstream relase.
+
   20 Aug 2016; Andre Erdmann <dywi@mailerd.de> tlp-9999-r1.ebuild,
   metadata.xml:
   Update live ebuild: combined live/release-ver ebuild,
