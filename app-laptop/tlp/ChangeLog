@@ -2,6 +2,10 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+* tlp-1.0 (03 Jun 2017)
+  03 Jun 2017; Andre Erdmann <dywi@mailerd.de> +tlp-1.0.ebuild:
+  Latest upstream relase.
+
   03 Jun 2017; Andre Erdmann <dywi@mailerd.de> -tlp-0.6-r1.ebuild,
   -tlp-0.7.ebuild, -tlp-0.7-r1.ebuild, -tlp-0.7-r3.ebuild, -tlp-0.8.ebuild:
   Remove old ebuilds.
