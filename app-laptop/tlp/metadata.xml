@@ -28,10 +28,6 @@
 	Setting the battery charge thresholds is available for IBM/Lenovo ThinkPads only.
 	</longdescription>
 	<use lang="en">
-		<flag name='deprecated'>
-			Installs thinkpad-radiosw, which relies on deprecated kernel features
-			(CONFIG_ACPI_PROC_EVENT, removed in 3.12 and later).
-		</flag>
 		<flag name='pm-utils'>
 			Rely on <pkg>sys-power/pm-utils</pkg> for handling system
 			suspend/hibernate/resume. Only users of <pkg>sys-apps/systemd</pkg>
