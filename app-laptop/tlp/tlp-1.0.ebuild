@@ -60,7 +60,7 @@ RDEPEND="
 	dev-lang/perl sys-apps/usbutils sys-apps/pciutils
 	pm-utils?  ( sys-power/pm-utils )
 	!pm-utils? ( sys-apps/systemd )
-	net-wireless/rfkill
+	|| ( >=sys-apps/util-linux-2.31_rc1 net-wireless/rfkill )
 	|| ( net-wireless/iw net-wireless/wireless-tools )
 	|| ( sys-power/linux-x86-power-tools sys-apps/linux-misc-apps )
 
