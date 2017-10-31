@@ -1,6 +1,5 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=5
 
@@ -36,7 +35,7 @@ else
 fi
 
 LINUX_SOURCES=linux-${LINUX_VER}.tar.xz
-SRC_URI="${SRC_URI} mirror://kernel/linux/kernel/v${LINUX_V}/${LINUX_SOURCES}"
+SRC_URI="${SRC_URI} mirror://kernel/linux/kernel/v$(get_major_version).x/${LINUX_SOURCES}"
 
 S="${WORKDIR}/linux-${LINUX_VER}"
 
