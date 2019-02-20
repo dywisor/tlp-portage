@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -6,7 +6,7 @@ EAPI=5
 inherit versionator eutils toolchain-funcs linux-info
 
 DESCRIPTION="x86 power tools bundled with kernel sources"
-HOMEPAGE="http://kernel.org/"
+HOMEPAGE="https://kernel.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
