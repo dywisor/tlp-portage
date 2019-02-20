@@ -33,6 +33,16 @@
 			suspend/hibernate/resume. Only users of <pkg>sys-apps/systemd</pkg>
 			may disable this flag.
 		</flag>
+		<flag name='elogind'>
+			Rely on <pkg>sys-auth/elogind</pkg> for handling system
+			suspend/hibernate/resume. Only users of <pkg>sys-apps/systemd</pkg>
+			may disable this flag.
+		</flag>
+		<flag name='systemd'>
+			Rely on <pkg>sys-apps/systemd</pkg> for handling system
+			suspend/hibernate/resume. Only users of <pkg>sys-auth/elogind</pkg>
+			may disable this flag.
+		</flag>
 		<flag name='tlp_suggests'>Pull in all optional dependencies</flag>
 		<flag name='rdw'>Radio device wizard: switch radios upon network connect/disconnect and dock/undock</flag>
 		<flag name='tpacpi-bundled'>Use the bundled tpacpi-bat script instead of <pkg>app-laptop/tpacpi-bat</pkg>.</flag>
