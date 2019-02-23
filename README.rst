@@ -151,10 +151,6 @@ It is assumed that your package manager is ``sys-apps/portage``.
    +--------------+--------------+---------+--------------------------------------+
    | rdw          | \-           | no      | install *TLP's* radio device wizard  |
    +--------------+--------------+---------+--------------------------------------+
-   | pm-utils     | yes (OpenRC) | yes     | depend on ``sys-power/pm-utils``     |
-   |              |              |         | (can only be deselected when         |
-   |              | \- (systemd) |         | using systemd)                       |
-   +--------------+--------------+---------+--------------------------------------+
    | deprecated   | \-           | no      | install *thinkpad-radiosw*, which    |
    |              |              |         | works with older kernel versions     |
    |              |              |         | only.                                |
@@ -170,6 +166,15 @@ It is assumed that your package manager is ``sys-apps/portage``.
    |              |              |         | Deselecting this flag                |
    |              |              |         | **disqualifies you from getting \    |
    |              |              |         | support upstream**                   |
+   +--------------+--------------+---------+--------------------------------------+
+   | pm-utils     | **no**       | no      | use ``sys-power/pm-utils``           |
+   |              |              |         | for handling system sleep/resume.    |
+   |              |              |         | **Not supported** upstream anymore.  |
+   |              |              |         |                                      |
+   |              |              |         | Two more modern alternatives         |
+   |              |              |         | provide this functionality,          |
+   |              |              |         | ``sys-apps/systemd``                 |
+   |              |              |         | and ``sys-auth/elogind``.            |
    +--------------+--------------+---------+--------------------------------------+
    | laptop-\     | **no**       | no      | Allow parallel installation of       |
    | mode-\       |              |         | ``app-laptop/tlp`` and               |
