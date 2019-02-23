@@ -161,7 +161,7 @@ src_install() {
 
 	## repoman false positive: COPYING
 	##  specifies which files are covered by which license
-	dodoc README AUTHORS COPYING changelog
+	dodoc README.md AUTHORS COPYING changelog
 
 	## pm hook blacklist
 	# always install this file,
