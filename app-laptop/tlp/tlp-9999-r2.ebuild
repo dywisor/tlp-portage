@@ -37,7 +37,7 @@ MY_CONFFILE="/etc/tlp.conf"
 
 LICENSE="GPL-2+ tpacpi-bundled? ( GPL-3+ )"
 SLOT="0"
-IUSE="tlp_suggests rdw +tpacpi-bundled bluetooth"
+IUSE="tlp_suggests rdw +tpacpi-bundled bluetooth pm-utils"
 
 _OPTIONAL_RDEPEND="
 	sys-apps/smartmontools
@@ -57,6 +57,7 @@ RDEPEND="
 	rdw?                ( net-misc/networkmanager )
 	tlp_suggests?       ( ${_OPTIONAL_RDEPEND} )
 	bluetooth?          ( sys-apps/dbus net-wireless/bluez )
+	pm-utils?           ( sys-power/pm-utils )
 "
 
 pkg_pretend() {
@@ -136,8 +137,8 @@ src_install() {
 		TLP_SHCPL="$(get_bashcompdir)" \
 		\
 		TLP_NO_INIT=1 \
-		TLP_WITH_SYSTEMD=1 \
-		TLP_WITH_ELOGIND=1 \
+		$(usex pm-utils TLP_WITH_SYSTEMD={0,1}) \
+		$(usex pm-utils TLP_WITH_ELOGIND={0,1}) \
 		$(usex tpacpi-bundled TLP_NO_TPACPI={0,1}) \
 		install-tlp install-man $(usex rdw install-rdw "")
 
@@ -147,9 +148,23 @@ src_install() {
 	## repoman false positive: COPYING
 	##  specifies which files are covered by which license
 	dodoc README.md AUTHORS COPYING changelog
+
+	if use pm-utils; then
+		## sleep/resume hook
+		insinto /usr/lib/pm-utils/sleep.d
+		doins "${FILESDIR}/49tlp"
+
+		## pm hook blacklist
+		insinto /etc/pm/config.d
+		newins "${FILESDIR}/pm-blacklist.0" tlp
+	fi
 }
 
 pkg_postinst() {
+	local -a pkgv
+	local pkg
+	local hit
+
 	## postinst messages
 	elog "${PN^^} is disabled by default."
 	elog "Refer to ${MY_README_URI} for setup instructions."
@@ -161,4 +176,23 @@ pkg_postinst() {
 
 	use tpacpi-bundled || ewarn \
 		"USE=-tpacpi-bundled: do not report bugs about tpacpi-bat upstream."
+
+	if use pm-utils; then
+		ewarn "USE=pm-utils: please do not report bugs about pm-utils upstream."
+
+	else
+		pkgv=( 'sys-auth/elogind' 'sys-apps/systemd' )
+		hit=0
+
+		for pkg in "${pkgv[@]}"; do
+			if has_version "${pkg}"; then
+				hit=1
+				break
+			fi
+		done
+
+		if [[ ${hit} -eq 0 ]]; then
+			elog "For system sleep/resume support, install one of the following packages: ${pkgv[*]} (or set USE=pm-utils, unsupported)."
+		fi
+	fi
 }

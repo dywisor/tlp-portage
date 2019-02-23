@@ -30,8 +30,10 @@
 	<use lang="en">
 		<flag name='pm-utils'>
 			Rely on <pkg>sys-power/pm-utils</pkg> for handling system
-			suspend/hibernate/resume. Only users of <pkg>sys-apps/systemd</pkg>
-			may disable this flag.
+			suspend/hibernate/resume. Deprecated and not supported upstream anymore.
+
+			It is recommended to keep this flag disabled and use either
+			<pkg>sys-apps/systemd</pkg> or <pkg>sys-auth/elogind</pkg>.
 		</flag>
 		<flag name='tlp_suggests'>Pull in all optional dependencies</flag>
 		<flag name='rdw'>Radio device wizard: switch radios upon network connect/disconnect and dock/undock</flag>
