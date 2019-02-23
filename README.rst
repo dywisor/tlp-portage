@@ -151,12 +151,6 @@ It is assumed that your package manager is ``sys-apps/portage``.
    +--------------+--------------+---------+--------------------------------------+
    | rdw          | \-           | no      | install *TLP's* radio device wizard  |
    +--------------+--------------+---------+--------------------------------------+
-   | deprecated   | \-           | no      | install *thinkpad-radiosw*, which    |
-   |              |              |         | works with older kernel versions     |
-   |              |              |         | only.                                |
-   |              |              |         |                                      |
-   |              |              |         | removed in 0.9  (*future* release)   |
-   +--------------+--------------+---------+--------------------------------------+
    | bluetooth    | \-           | no      | install optional bluetooth           |
    |              |              |         | dependencies (bluez)                 |
    +--------------+--------------+---------+--------------------------------------+
@@ -201,14 +195,3 @@ The following kernel options should be set to *y*:
 * CONFIG_ACPI_AC
 * CONFIG_SENSORS_CORETEMP
 * CONFIG_X86_MSR
-
-* CONFIG_ACPI_PROC_EVENT
-
-  removed in Linux >= 3.12 (and deprecated before),
-  required for ``thinkpad-radiosw``
-  (``DEVICES_TO_ENABLE_ON_RADIOSW`` in the config file)
-
-  * enable if you have a ThinkPad and an older kernel (e.g. 3.10)
-  * don't care about it on newer kernel versions, but lose ``thinkpad-radiosw``
-
-  Future versions of TLP (>= 0.9) will no longer support this feature.
