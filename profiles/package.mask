@@ -1,4 +1,8 @@
 # André Erdmann <dywi@mailerd.de> (04 Mar 2019)
+# mask linux-x86-power-tools version (removal in 14 days)
+=sys-power/linux-x86-power-tools-3.17
+
+# André Erdmann <dywi@mailerd.de> (04 Mar 2019)
 # mask old TLP versions (removal in 14 days)
 # (mask on tlp-9999-r1 is redundant)
 =app-laptop/tlp-0.9
