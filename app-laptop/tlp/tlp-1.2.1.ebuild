@@ -23,7 +23,7 @@ if [[ "${PV}" == 9999* ]]; then
 else
 	SRC_URI="
 		https://github.com/linrunner/TLP/archive/${PV}.tar.gz -> ${P}.tar.gz
-		https://tlp-gentoo-additions.s3.amazonaws.com/tlp-gentoo-patches-${PV}.tar.xz
+		https://tlp-gentoo-additions.s3.amazonaws.com/tlp-gentoo-patches-1.2.tar.xz
 	"
 	S="${WORKDIR}/${PN^^}-${PV}"
 	KEYWORDS="~amd64 ~x86"
