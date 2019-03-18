@@ -2,13 +2,6 @@
 # mask old TLP versions (removal in 30 days)
 =app-laptop/tlp-1.1
 
-# André Erdmann <dywi@mailerd.de> (04 Mar 2019)
-# mask old TLP versions (removal in 14 days)
-# (mask on tlp-9999-r1 is redundant)
-=app-laptop/tlp-0.9
-=app-laptop/tlp-1.0
-=app-laptop/tlp-9999-r1
-
 # André Erdmann <dywi@mailerd.de> (15 Sep 2014)
 # ebuild builds against two live repos
 >=app-laptop/tlp-9999
