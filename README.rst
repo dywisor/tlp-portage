@@ -52,7 +52,7 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
    See also `Layman - Gentoo Wiki`_.
 
-#. Make sure that ``/etc/portage/make.conf`` has the following line::
+#. layman versions prior to ``2.1.0``: make sure that ``/etc/portage/make.conf`` has the following line::
 
       source /var/lib/layman/make.conf
 
