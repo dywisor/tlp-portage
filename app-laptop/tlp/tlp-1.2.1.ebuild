@@ -102,7 +102,7 @@ src_prepare() {
 		# * append TLP_LOAD_MODULES config option
 		# * lspci is in sbin => tlp-pcilist in sbin
 		k="$(TZ=UTC date "+%Y%m%d")"
-		[ -n "${k}" ] || die "Failed to get time stamp"
+		[[ -n "${k}" ]] || die "Failed to get time stamp"
 		emake -C "${WORKDIR}/gentoo-additions" \
 			TLP_SRC="${S}" TLP_CONF="${MY_CONFFILE}" \
 			TLP_APPENDVER="+git-${EGIT_BRANCH:-live}-${k}" \
