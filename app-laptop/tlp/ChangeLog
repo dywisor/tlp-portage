@@ -1,6 +1,6 @@
 # ChangeLog for app-laptop/tlp
-# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: $
+# Copyright 2011-2019 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
 
 * tlp-1.0 (03 Jun 2017)
   03 Jun 2017; Andre Erdmann <dywi@mailerd.de> +tlp-1.0.ebuild:
