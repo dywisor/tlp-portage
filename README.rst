@@ -32,32 +32,52 @@ Setup Instructions
 The following commands (``$ <command...>``) should be run as root.
 It is assumed that your package manager is ``sys-apps/portage``.
 
+#. Add the ``tlp-portage`` repository
 
-#. Install layman
+   #. *Option A:* manage repo via ``repos.conf``
 
-   #. Enable the git USE flag for layman::
+      #. Install git::
 
-      $ mkdir /etc/portage/package.use
-      $ echo "app-portage/layman git" >> /etc/portage/package.use/layman
+         $ emerge -a --noreplace "dev-vcs/git"
 
-   #. Install layman::
+      #. Download the ``repos.conf`` file::
 
-      $ emerge -a --noreplace ">=app-portage/layman-2"
+            $ mkdir -p -- /etc/portage/repos.conf
+            $ wget "https://raw.github.com/dywisor/tlp-portage/maint/repos.conf" -O /etc/portage/repos.conf/tlp.conf
 
-   See also `Layman - Gentoo Wiki`_.
+         The default repo location is ``/usr/portage-overlay/tlp``, you may change that freely.
 
-#. layman versions prior to ``2.1.0``: make sure that ``/etc/portage/make.conf`` has the following line::
+      #. Download the repo::
 
-      source /var/lib/layman/make.conf
+            $ emerge --sync tlp
 
-   If you've just installed layman, simply run::
+   #. **OR** *Option B:* manage repo with layman
 
-      $ echo "source /var/lib/layman/make.conf" >> /etc/portage/make.conf
+      #. Install layman
 
-#. Add the *tlp-portage* overlay with layman::
+         #. Enable the git USE flag for layman::
 
-      $ wget "https://raw.github.com/dywisor/tlp-portage/maint/layman.xml" -O /etc/layman/overlays/tlp.xml
-      $ layman -f -a tlp
+            $ mkdir /etc/portage/package.use
+            $ echo "app-portage/layman git" >> /etc/portage/package.use/layman
+
+         #. Install layman::
+
+            $ emerge -a --noreplace ">=app-portage/layman-2"
+
+         See also `Layman - Gentoo Wiki`_.
+
+      #. layman versions prior to ``2.1.0``: make sure that ``/etc/portage/make.conf`` has the following line::
+
+            source /var/lib/layman/make.conf
+
+         If you've just installed layman, simply run::
+
+            $ echo "source /var/lib/layman/make.conf" >> /etc/portage/make.conf
+
+      #. Add the *tlp-portage* overlay with layman::
+
+            $ wget "https://raw.github.com/dywisor/tlp-portage/maint/layman.xml" -O /etc/layman/overlays/tlp.xml
+            $ layman -f -a tlp
 
 #. **stable arch** only (amd64, x86): unmask *TLP*:
 
