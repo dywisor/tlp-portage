@@ -181,12 +181,6 @@ It is assumed that your package manager is ``sys-apps/portage``.
    |              |              |         | ``sys-apps/systemd``                 |
    |              |              |         | and ``sys-auth/elogind``.            |
    +--------------+--------------+---------+--------------------------------------+
-   | laptop-\     | **no**       | no      | Allow parallel installation of       |
-   | mode-\       |              |         | ``app-laptop/tlp`` and               |
-   | tools        |              |         | ``app-laptop/laptop-mode-tools``.    |
-   |              |              |         | Having both active at the same time  |
-   |              |              |         | is not supported at all.             |
-   +--------------+--------------+---------+--------------------------------------+
 
 
 --------------------
