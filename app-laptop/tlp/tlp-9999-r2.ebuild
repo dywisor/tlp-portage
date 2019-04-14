@@ -1,7 +1,7 @@
 # Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=6
 
 inherit eutils bash-completion-r1 linux-info systemd udev
 
@@ -117,10 +117,10 @@ src_prepare() {
 		use tpacpi-bundled || \
 			PATCHES+=( "${PDIR}/0002-unbundle-tpacpi-bat.patch" )
 
-		epatch "${PATCHES[@]}"
+		eapply "${PATCHES[@]}"
 	fi
 
-	epatch_user
+	eapply_user
 }
 
 src_compile() {
@@ -133,7 +133,7 @@ src_install() {
 	emake DESTDIR="${D}" \
 		TLP_ULIB="$(get_udevdir)" \
 		TLP_CONF="${MY_CONFFILE}" \
-		TLP_SYSD="$(systemd_get_unitdir)" \
+		TLP_SYSD="$(systemd_get_systemunitdir)" \
 		TLP_SHCPL="$(get_bashcompdir)" \
 		\
 		TLP_NO_INIT=1 \
