@@ -145,9 +145,8 @@ src_install() {
 	## init/service file(s)
 	newinitd "${FILESDIR}/tlp-init.openrc-r3" "${PN}"
 
-	## repoman false positive: COPYING
-	##  specifies which files are covered by which license
-	dodoc README.md AUTHORS COPYING changelog
+	## doc
+	dodoc README.md changelog
 
 	if use pm-utils; then
 		## sleep/resume hook
