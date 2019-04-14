@@ -6,7 +6,7 @@ EAPI=5
 inherit eutils bash-completion-r1 linux-info systemd udev
 
 DESCRIPTION="Advanced Power Management for Linux"
-HOMEPAGE="http://linrunner.de/tlp"
+HOMEPAGE="https://linrunner.de/tlp"
 
 if [[ "${PV}" == 9999* ]]; then
 	inherit git-r3
