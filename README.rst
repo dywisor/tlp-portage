@@ -19,17 +19,11 @@
 .. _upstream documentation:
    https://www.linrunner.de/en/tlp/docs/tlp-configuration.html
 
-.. _Sabayon Package Repo:
-   http://yugoloth.de/dywi/tlp-sabayon/
-
 =============
  tlp-portage
 =============
 
 Overlay for installing `TLP`_ on Gentoo/Funtoo/... systems.
-
-Binary packages for Sabayon are available, too,
-see the `Sabayon Package Repo`_ for details.
 
 
 Setup Instructions
