@@ -1,5 +1,5 @@
 .. _TLP:
-   http://linrunner.de/en/tlp/tlp.html
+   https://linrunner.de/en/tlp/tlp.html
 
 .. _TLP git repo:
    https://github.com/linrunner/TLP
@@ -11,13 +11,13 @@
    git://github.com/dywisor/tlp-portage.git
 
 .. _Layman - Gentoo Wiki:
-   http://wiki.gentoo.org/wiki/Layman
+   https://wiki.gentoo.org/wiki/Layman
 
 .. _tpacpi-bat:
    https://github.com/teleshoes/tpacpi-bat
 
 .. _upstream documentation:
-   http://www.linrunner.de/en/tlp/docs/tlp-configuration.html
+   https://www.linrunner.de/en/tlp/docs/tlp-configuration.html
 
 .. _Sabayon Package Repo:
    http://yugoloth.de/dywi/tlp-sabayon/
