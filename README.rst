@@ -122,11 +122,8 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
       $ systemctl mask systemd-rfkill@.service
 
-#. Enable or restart/reload the *acpid* service
-
-#. Start **TLP**::
-
-      $ tlp start
+#. Reboot your system to apply the new settings
+   (alternatively, you could reload the udev rules and start TLP)
 
 #. You might want to run ``tlp-stat`` to see if everything is OK so far
 
