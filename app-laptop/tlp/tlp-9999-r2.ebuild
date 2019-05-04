@@ -145,6 +145,9 @@ src_install() {
 	## init/service file(s)
 	newinitd "${FILESDIR}/tlp-init.openrc-r3" "${PN}"
 
+	# /var/lib/tlp should exist
+	keepdir /var/lib/tlp
+
 	## doc
 	dodoc README.md changelog
 
