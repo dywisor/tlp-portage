@@ -134,6 +134,7 @@ src_install() {
 		TLP_ULIB="$(get_udevdir)" \
 		TLP_CONF="${MY_CONFFILE}" \
 		TLP_SYSD="$(systemd_get_systemunitdir)" \
+		TLP_ELOD="/$(get_libdir)/elogind/system-sleep" \
 		TLP_SHCPL="$(get_bashcompdir)" \
 		\
 		TLP_NO_INIT=1 \
