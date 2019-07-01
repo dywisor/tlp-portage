@@ -1,3 +1,3 @@
-# André Erdmann <dywi@mailerd.de> (15 Sep 2014)
+# André Erdmann <dywi@mailerd.de> (2014-09-15)
 # ebuild builds against two live repos
 >=app-laptop/tlp-9999
