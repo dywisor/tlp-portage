@@ -106,7 +106,7 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
 #. *(optional)* choose USE flags, for example::
 
-      $ echo "app-laptop/tlp tlp_suggests" > /etc/portage/package.use/tlp
+      $ echo "app-laptop/tlp tlp-suggests" > /etc/portage/package.use/tlp
 
    See `USE flags`_ below for a full listing.
 
@@ -116,8 +116,8 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
 #. Edit *TLP's* configuration file **/etc/tlp.conf**
 
-   In contrast to other distributions, the config file is not in */etc/default*
-   and **you have to enable TLP explicitly** by setting ``TLP_ENABLE=1``.
+   In contrast to other distributions,
+   **you have to enable TLP explicitly** by setting ``TLP_ENABLE=1``.
 
    See the `upstream documentation`_ for details.
 
@@ -131,7 +131,6 @@ It is assumed that your package manager is ``sys-apps/portage``.
    **systemd**::
 
       $ systemctl enable tlp.service
-      $ systemctl enable tlp-sleep.service
 
    ``systemd-rfkill`` should be masked as it conflicts with
    ``RESTORE_DEVICE_STATE_ON_STARTUP``/``DEVICES_TO_{EN,DIS}ABLE_ON_STARTUP``::
@@ -158,7 +157,7 @@ It is assumed that your package manager is ``sys-apps/portage``.
    +--------------+--------------+---------+--------------------------------------+
    | flag         | recommended  | default | description                          |
    +==============+==============+=========+======================================+
-   | tlp_suggests | yes          | no      | install all optional dependencies    |
+   | tlp-suggests | yes          | yes     | install all optional dependencies    |
    +--------------+--------------+---------+--------------------------------------+
    | rdw          | \-           | no      | install *TLP's* radio device wizard  |
    +--------------+--------------+---------+--------------------------------------+
