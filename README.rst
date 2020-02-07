@@ -120,7 +120,11 @@ It is assumed that your package manager is ``sys-apps/portage``.
    **you have to enable TLP explicitly** by setting ``TLP_ENABLE=1``.
 
    See the `upstream documentation`_ for details.
-
+   
+   .. Note::
+   
+      Beginning with TLP 1.3, the configuration file format and handling
+      has changed, users upgrading from TLP 1.2 should review their configuration.
 
 #. Enable the *TLP* service
 
