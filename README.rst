@@ -19,6 +19,9 @@
 .. _upstream documentation:
    https://www.linrunner.de/en/tlp/docs/tlp-configuration.html
 
+.. _eselect/repository - Gentoo Wiki:
+   https://wiki.gentoo.org/wiki/Eselect/Repository
+
 =============
  tlp-portage
 =============
@@ -34,18 +37,21 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
 #. Add the ``tlp-portage`` repository
 
-   #. *Option A:* manage repo via ``repos.conf``
+   #. *Option A:* manage repo using eselect-repository
 
-      #. Install git::
+      #. Install eselect-repository::
 
-         $ emerge -a --noreplace "dev-vcs/git"
+            $ emerge -a --no-replace app-eselect/eselect-repository
 
-      #. Download the ``repos.conf`` file::
+      See also `eselect/repository - Gentoo Wiki`_.
 
-            $ mkdir -p -- /etc/portage/repos.conf
-            $ wget "https://raw.github.com/dywisor/tlp-portage/maint/repos.conf" -O /etc/portage/repos.conf/tlp.conf
+      #. If it doesn't already exist, create the ``repos.conf`` directory as configured by the ``REPOS_CONF`` variable in ``/etc/eselect/repository.conf``::
 
-         The default repo location is ``/usr/portage-overlay/tlp``, you may change that freely.
+            $ mkdir -p /etc/portage/repos.conf
+
+      #. Add the *tlp-portage* overlay with eselect-repository::
+
+            $ eselect repository add tlp git https://github.com/dywisor/tlp-portage
 
       #. Download the repo::
 
