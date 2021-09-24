@@ -4,9 +4,6 @@
 .. _TLP git repo:
    https://github.com/linrunner/TLP
 
-.. _tlp-gentoo-additions:
-   https://github.com/dywisor/tlp-gentoo-additions
-
 .. _tlp-portage:
    git://github.com/dywisor/tlp-portage.git
 
