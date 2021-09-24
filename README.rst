@@ -125,7 +125,7 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
 #. Enable the *TLP* service
 
-   **OpenRC** (most Gentoo users)::
+   **OpenRC**::
 
       $ rc-update add tlp default
 
