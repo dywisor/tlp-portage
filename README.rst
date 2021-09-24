@@ -36,9 +36,9 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
    #. *Option A:* manage repo using eselect-repository
 
-      #. Install eselect-repository::
+      #. Install eselect-repository and git::
 
-            $ emerge -a --no-replace app-eselect/eselect-repository
+            $ emerge -a --no-replace app-eselect/eselect-repository dev-vcs/git
 
       See also `eselect/repository - Gentoo Wiki`_.
 
