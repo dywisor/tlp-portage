@@ -145,6 +145,10 @@ It is assumed that your package manager is ``sys-apps/portage``.
 
       $ systemctl mask systemd-rfkill@.service
 
+   ``power-profiles-daemon`` must be masked as it conflicts with TLP as a whole::
+
+      $ systemctl mask power-profiles-daemon.service
+
 #. Reboot your system to apply the new settings
    (alternatively, you could reload the udev rules and start TLP)
 
