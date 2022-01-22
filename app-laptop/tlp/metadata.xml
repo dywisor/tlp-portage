@@ -28,13 +28,6 @@
 	Setting the battery charge thresholds is available for IBM/Lenovo ThinkPads only.
 	</longdescription>
 	<use lang="en">
-		<flag name='pm-utils'>
-			Rely on <pkg>sys-power/pm-utils</pkg> for handling system
-			suspend/hibernate/resume. Deprecated and not supported upstream anymore.
-
-			It is recommended to keep this flag disabled and use either
-			<pkg>sys-apps/systemd</pkg> or <pkg>sys-auth/elogind</pkg>.
-		</flag>
 		<flag name='tlp-suggests'>Pull in all optional dependencies</flag>
 		<flag name='rdw'>Radio device wizard: switch radios upon network connect/disconnect and dock/undock</flag>
 		<flag name='tpacpi-bundled'>Use the bundled tpacpi-bat script instead of <pkg>app-laptop/tpacpi-bat</pkg>.</flag>
