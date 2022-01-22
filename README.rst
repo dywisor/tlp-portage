@@ -182,15 +182,6 @@ It is assumed that your package manager is ``sys-apps/portage``.
    |              |              |         | **disqualifies you from getting \    |
    |              |              |         | support upstream**                   |
    +--------------+--------------+---------+--------------------------------------+
-   | pm-utils     | **no**       | no      | use ``sys-power/pm-utils``           |
-   |              |              |         | for handling system sleep/resume.    |
-   |              |              |         | **Not supported** upstream anymore.  |
-   |              |              |         |                                      |
-   |              |              |         | Two more modern alternatives         |
-   |              |              |         | provide this functionality,          |
-   |              |              |         | ``sys-apps/systemd``                 |
-   |              |              |         | and ``sys-auth/elogind``.            |
-   +--------------+--------------+---------+--------------------------------------+
 
 
 --------------------
