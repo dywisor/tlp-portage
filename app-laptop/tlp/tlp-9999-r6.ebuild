@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit eutils bash-completion-r1 linux-info systemd udev
+inherit bash-completion-r1 linux-info systemd udev
 
 DESCRIPTION="Advanced Power Management for Linux"
 HOMEPAGE="https://linrunner.de/tlp"
