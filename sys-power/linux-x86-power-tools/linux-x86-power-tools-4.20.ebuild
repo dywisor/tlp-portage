@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit eutils toolchain-funcs linux-info
+inherit toolchain-funcs linux-info
 
 DESCRIPTION="x86 power tools bundled with kernel sources"
 HOMEPAGE="https://kernel.org/"
